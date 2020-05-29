@@ -1,0 +1,48 @@
+main{
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+mat-card{
+  width: 100%;
+}
+.header-div{
+  padding-top: 20px;
+}
+div{
+  width: 100%;
+  text-align: center;
+}
+span{
+  width: 100%;
+  margin: auto;
+}
+form{
+  width: 90%;
+  margin: auto;
+}
+mat-form-field{
+  width: 100%;
+  margin-top:20px
+}
+mat-card-content{
+  margin: auto;
+}
+.pill-button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.btn-signup{
+  width: 50%;
+  padding: 11px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
