@@ -52,35 +52,57 @@
         <!-- <a routerLink="/" class="mat-body-2">HOME <span class="sr-only">(current)</span></a> -->
         <a routerLink="/" class="mat-body-2">HOME<span class="sr-only">(current)</span></a>
       </li>
+      <!-- <li class="nav-item">
+          <a routerLink="/" class="mat-body-2">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/" class="mat-body-2">SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/" class="mat-body-2">CONTACT US</a>
+        </li> -->
       <li class="nav-item">
-        <a routerLink="/" class="mat-body-2">ABOUT US</a>
+        <a routerLink="/" class="mat-body-2" data-toggle="modal" data-target="#exampleModalLong">SIGN UP</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/" class="mat-body-2">SERVICES</a>
+        <a routerLink="/" class="mat-body-2" data-toggle="modal" data-target="#exampleModalLong1">SIGN IN</a>
       </li>
+
+      <!-- Researcher -->
+
       <li class="nav-item">
-        <a routerLink="/" class="mat-body-2">CONTACT US</a>
+        <a routerLink="/user/profile" class="mat-body-2" (click)="onResearcherProfile()">MY PROFILE</a>
       </li>
-      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a routerLink="/signup" class="mat-body-2">SIGN UP</a>
-      </li>
-      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a routerLink="/signin" class="mat-body-2">SIGN IN</a>
-      </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a routerLink="/" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
+      <li class="nav-item" *ngIf="selectedOption=='researcher'">
+        <a routerLink="/" class="mat-body-2" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</a>
       </li>
     </ul>
   </div>
 </nav>
 
+<div style="background-color: white;">
+  <!-- Modal -->
+  <div class="modal fade modal-signup" id="exampleModalLong" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <app-signup></app-signup>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Modal 2-->
+  <div class="modal fade modal-signup" id="exampleModalLong1" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <app-signin></app-signin>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<!--
-<app-home-land></app-home-land>
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias recusandae amet, molestiae, ad obcaecati autem laboriosam similique doloribus consequuntur doloremque alias facere provident! Beatae vel rem aliquam deleniti amet illo.</p>
-<h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, nam repudiandae. Aperiam at nesciunt tenetur alias obcaecati necessitatibus eaque quas voluptate esse modi ullam, ipsam laudantium earum reiciendis? Temporibus, asperiores?</h1>
-
- -->
+<app-user-profile *ngIf="ResearcherProfile"></app-user-profile>

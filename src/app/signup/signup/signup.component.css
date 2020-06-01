@@ -1,5 +1,5 @@
 main{
-  width: 100%;
+  width: 40%;
   margin: auto;
   margin-top: 20px;
 }
@@ -45,4 +45,16 @@ mat-card-content{
   padding: 11px;
   margin-top:20px;
   margin-bottom:20px;
+}
+
+.login-text{
+  width: 100%;
+  padding: auto;
+  margin: auto;
+}
+.chip-login{
+  margin: auto;
+}
+.btn-signup-hide{
+  visibility: hidden;
 }

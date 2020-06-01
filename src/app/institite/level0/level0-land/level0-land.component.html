@@ -1,0 +1,39 @@
+<div class="row">
+<div class="col-md-4">
+  <mat-card>
+    <mat-card-content>
+      <mat-toolbar color="primary" style="margin-bottom: 10px;">
+        <mat-select class="mat-body-2" class="x" (selectionChange)="onChangeSelect($event.value)" style="font-size: 18px;">
+          <mat-option *ngFor="let option of options" [value]="option.value" style="font-size: 16px;">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-toolbar>
+      <mat-toolbar color="primary" *ngIf="selectedOption=='Role : Researcher'">
+        <span mat-button>
+          <a routerLink="/level0" class="mat-body-2" (click)="onResearcherProfile()">MY PROFILE</a>
+        </span>
+      </mat-toolbar>
+      <mat-toolbar color="primary" *ngIf="selectedOption=='Role : Researcher'">
+        <span>
+          <a routerLink="/level0" class="mat-body-2" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</a>
+        </span>
+      </mat-toolbar>
+      <mat-toolbar color="primary" *ngIf="selectedOption=='Role : Level0'">
+        <span>
+          <a routerLink="/level0" class="mat-body-2" (click)="onInstituteProfile()">INSTITUTE PROFILE</a>
+        </span>
+      </mat-toolbar>
+      <mat-toolbar color="primary" *ngIf="selectedOption=='Role : Level0'">
+        <span>
+          <a routerLink="/level0" class="mat-body-2" (click)="onLevel1InstrumentsAdd()">ADD DEPARTMENTSE</a>
+        </span>
+      </mat-toolbar>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+<div class="col-md-8">
+  <app-user-profile *ngIf="ResearcherProfile"></app-user-profile>
+</div>
+</div>

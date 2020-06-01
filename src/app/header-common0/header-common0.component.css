@@ -1,0 +1,30 @@
+.spacer{
+  margin: auto;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  text-decoration: none;
+  color: darkcyan ;
+}
+span{
+  margin: 1rem;
+}
+li{
+  margin:1rem;
+}
+.modal-signup{
+  margin-top: 60px;
+}
+::ng-deep .mat-select-arrow {
+  border-left: 15px solid transparent !important;
+  border-right: none !important;
+  border-top: 15px solid transparent !important;
+  border-image-source: url('src/assets/Images/more.svg') !important;
+  border-image-repeat: stretch !important;
+}
+nav{
+  background-color: white;
+}

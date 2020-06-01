@@ -1,0 +1,14 @@
+.username{
+  text-align: center;
+  width: 100%;
+}
+.cardLeft{
+  margin-top: 10%;
+  height: auto;
+}
+*{
+  font-size: 18px;
+}
+.rightContainer{
+  margin-top: 10%;
+}
