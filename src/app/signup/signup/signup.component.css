@@ -1,3 +1,6 @@
+.row{
+  margin-top:50px;
+}
 main{
   width: 40%;
   margin: auto;
@@ -12,7 +15,11 @@ mat-card{
 div{
   width: 100%;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
+
 }
+
 span{
   width: 100%;
   margin: auto;

@@ -1,40 +1,59 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-5 cardLeft">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <!-- <mat-card-title>Shiba Inu</mat-card-title> -->
-            </mat-card-header>
-            <div style="align-items: center;width: 100%;display: flex;justify-content: center;">
-              <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-              class="rounded-circle" alt="Photo of a Shiba Inu" />
+<mat-card>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 rightContainer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="image">
             </div>
-            <mat-card-content>
-              <div class="row my-5">
-                <p class="username"><strong>User Name</strong></p>
-                <hr style="width: 80%;">
-                <p class="username"><strong>roles</strong></p>
-                <hr style="width: 80%;">
-                <p class="username"><strong>Joined since</strong></p>
+            <div class="col-md-8">
+
             </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div class="col-md-1"></div>
-      </div>
-    </div>
-    <div class="col-md-7 rightContainer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>what should include</p>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form [formGroup]="form" (submit)="onUpdateDetails()">
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Full Name</mat-label>
+                  <input formControlName="fullName" matInput placeholder="Enter full name" [value]="fullName">
+                  <mat-error *ngIf="form.get('fullName').invalid">Enter valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input formControlName="userName" matInput placeholder="Enter full name" [value]="userName">
+                  <mat-error *ngIf="form.get('userName').invalid">Enter valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Mobile No</mat-label>
+                  <input formControlName="mobileNo" matInput placeholder="Enter full name" [value]="mobileNo">
+                  <mat-error *ngIf="form.get('mobileNo').invalid">Enter valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email</mat-label>
+                  <input formControlName="email" matInput placeholder="Enter full name" [value]="email">
+                  <mat-error *ngIf="form.get('email').invalid">Enter valid email</mat-error>
+                </mat-form-field>
+
+                <!-- <mat-form-field class="example-full-width">
+                  <mat-label>Password</mat-label>
+                  <input formControlName="password" type="password" matInput placeholder="Enter password" [value]="password">
+                  <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
+                </mat-form-field> -->
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</mat-card>

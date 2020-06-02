@@ -2,6 +2,10 @@
   text-align: center;
   width: 100%;
 }
+.institute-data{
+  text-align: center;
+  width: 100%;
+}
 .cardLeft{
   margin-top: 10%;
   height: auto;
@@ -11,18 +15,4 @@
 } */
 .rightContainer{
   margin-top: 10%;
-}
-
-
-mat-card{
-  width: 95%;
-  margin: auto;
-  margin-top: 45px;
-}
-
-form{
-  width: 100%;
-}
-mat-form-field{
-  width: 100%;
 }

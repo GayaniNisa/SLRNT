@@ -65,22 +65,12 @@
         <a routerLink="/signup" class="mat-body-2">SIGN UP</a>
       </li>
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a routerLink="/signin" class="mat-body-2">SIGN IN</a>
+        <a href="/signin" class="mat-body-2">SIGN IN</a>
       </li>
       <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a routerLink="/" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
+        <a src="/" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
       </li>
     </ul>
   </div>
 </nav>
 
-
-
-
-<!--
-<app-home-land></app-home-land>
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias recusandae amet, molestiae, ad obcaecati autem laboriosam similique doloribus consequuntur doloremque alias facere provident! Beatae vel rem aliquam deleniti amet illo.</p>
-<h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, nam repudiandae. Aperiam at nesciunt tenetur alias obcaecati necessitatibus eaque quas voluptate esse modi ullam, ipsam laudantium earum reiciendis? Temporibus, asperiores?</h1>
-
- -->

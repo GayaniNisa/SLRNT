@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 
-interface SignUpRequest{
+export interface SignUpRequest{
   fullName:string,
   userName:string,
   email:string,
   password:string
 }
 
-interface User{
+export interface User{
   email:string;
   fullName:string;
   image:string;
@@ -20,14 +20,15 @@ interface User{
   institute:Institute;
   department:Department;
   instruments:Instrument;
-  roles:Roles[]
+  roles:Roles[],
+  createdAt:string
 }
 interface Roles{
     name:string,
     _id:string
 }
 
-interface Institute{
+export interface Institute{
   instituteHead:User,
   instituteName:string,
   instituteEmail:string,
@@ -37,10 +38,12 @@ interface Institute{
   province:string,
   instituteTelephone:string,
   rating:string,
-  departments:Department[]
+  createdAt:string,
+  departments:Department[],
+  instrumentCount:number
 }
 
-interface Department{
+export interface Department{
   instituteId:Institute,
   departmentHead:User,
   departmentName:string,
@@ -54,7 +57,7 @@ interface Department{
   instruments:Instrument[]
 }
 
-interface Instrument{
+export interface Instrument{
   custodianId:User,
   instituteId:Institute,
   departmentId:Department,
@@ -88,6 +91,7 @@ export class AuthService {
   user_roles;
 
   BASE_URL='http://localhost:8080'
+  // BASE_URL='http://labnet.lk:8080'
 
 
   constructor(public http:HttpClient,private router:Router) { }
@@ -95,7 +99,7 @@ export class AuthService {
   login(email:string,password:string){
     let postData = {userNameOrEmail:email,password:password}
     console.log(postData)
-    return this.http.post<{accessToken:string,tokenType:string,user:User}>('http://localhost:8080/api/auth/signin',postData);
+    return this.http.post<{accessToken:string,tokenType:string,user:User}>(this.BASE_URL+'/api/auth/signin',postData);
 
   }
   signup(fullName:string,userName:string,email:string,password:string){
@@ -107,7 +111,7 @@ export class AuthService {
 
   getCurrent(){
     console.log(this.currentUser)
-    return this.http.get<User>(this.BASE_URL+'/api/current/user');
+    return this.http.get<{accessToken:string,tokenType:string,user:User}>(this.BASE_URL+'/api/current/user');
 
   }
 

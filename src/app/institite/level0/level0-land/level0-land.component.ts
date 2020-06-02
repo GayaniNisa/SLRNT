@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Level0LandComponent implements OnInit {
 
-  selectedOption="Role : Level0";
+  selectedOption="Role : Researcher";
 
   ResearcherProfile:boolean=false;
   ResearcherPurchase:boolean=false;

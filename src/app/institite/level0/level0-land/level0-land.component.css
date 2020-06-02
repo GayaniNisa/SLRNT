@@ -15,3 +15,17 @@ span a{
   border-image-source: url('src/assets/Images/dots.png') !important;
   border-image-repeat: stretch !important;
 }
+
+
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+.section-nav{
+  margin-top: 50px;
+}
+
+.spacer{
+  margin:auto;
+  /* width: 100%; */
+}

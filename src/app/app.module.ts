@@ -13,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select'
 import { MatChipsModule } from '@angular/material/chips'
 import { MatButtonModule } from '@angular/material/button'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { HomeLandComponent } from './home/home-land/home-land.component';
 import { HeaderComponent } from './header/header/header.component';
@@ -32,6 +34,10 @@ import { HeaderCommon1Component } from './header-common1/header-common1.componen
 import { HeaderCommon2Component } from './header-common2/header-common2.component';
 import { UserLandComponent } from './user/user-land/user-land.component';
 import { Level0SideNavComponent } from './institite/level0/level0-side-nav/level0-side-nav.component';
+import { AddInstrumentsComponent } from './institite/level1/add-instruments/add-instruments.component';
+import { AddDepartmentComponent } from './institite/level0/add-department/add-department.component';
+import { UserDisplayComponent } from './user/user-display/user-display.component';
+import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
 
 
 @NgModule({
@@ -51,7 +57,11 @@ import { Level0SideNavComponent } from './institite/level0/level0-side-nav/level
     HeaderCommon1Component,
     HeaderCommon2Component,
     UserLandComponent,
-    Level0SideNavComponent
+    Level0SideNavComponent,
+    AddInstrumentsComponent,
+    AddDepartmentComponent,
+    UserDisplayComponent,
+    InstituteDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +76,8 @@ import { Level0SideNavComponent } from './institite/level0/level0-side-nav/level
     MatSelectModule,
     MatChipsModule,
     MatButtonModule,
+    MatDividerModule,
+    MatExpansionModule,
     HttpClientModule
   ],
   providers: [

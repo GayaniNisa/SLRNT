@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-5 cardLeft">
+          <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-sm-3"></div>
+                              <div class="col-sm-6">
+                                <div class="row">
+                                  <div>
+                                  <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="Cinque Terre"
+                                    style="width: 100%;height:100%;">
+                                  </div>
+                                  <div>
+                                    <img src="" class="rounded-circle" alt="Cinque Terre"
+                                      style="width: 100%;height:100%;">
+                                    </div>
+                                    <!-- <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="Cinque Terre"
+                                    style="width: 100%;height:100%;"> -->
+                                </div>
+                                <div class="row">
+                                  <!-- <form [formGroup]="form">
+                                                    <button type="button" mat-stroked-button (click)="filePicker.click()">Pick Image</button>
+                                                    <input accept=".png,.jpg" type="file" #filePicker (change)="onImagePicked($event)">
+                                                </form> -->
+
+                                  <!-- Button trigger modal -->
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                    Change profile picture
+                                  </button>
+                                </div>
+
+                              </div>
+                              <div class="col-sm-3"></div>
+
+                          </div>
+                      </div>
+                      <div class="row">
+                              <p class="username"><strong>institute Name</strong></p>
+                              <p class="institute-data">{{instituteName}}</p>
+                              <hr style="width: 80%;">
+                              <p class="username"><strong>Institute Email</strong></p>
+                              <p class="institute-data">{{instituteEmail}}</p>
+                              <hr style="width: 80%;">
+                              <p class="username"><strong>Joined since</strong></p>
+                              <p class="institute-data">{{jointedAt}}</p>
+                              <hr style="width: 80%;">
+                              <p class="username"><strong>Ratings</strong></p>
+                          </div>
+                  </div>
+              </div>
+              <div class="col-sm-1"></div>
+          </div>
+      </div>
+      <div class="col-sm-7 rightContainer">
+          <div class="container ">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <p><strong>address</strong></p>
+                      <p>{{no}}</p>
+                      <p>{{street}}</p>
+                      <p>{{city}}</p>
+                      <p>{{province}}</p>
+                      <p></p>
+                      <hr style="width: 100%;">
+                      <p><strong>Telephone no</strong></p>
+                      <p>{{telephoneNo}}</p>
+                      <hr style="width: 100%;">
+                      <p><strong>Total number of Instruments in the institute</strong></p>
+                      <p>{{instrumentCount}}</p>
+                      <hr style="width: 100%;">
+                      <p><strong>instruments categories</strong></p>
+                      <hr style="width: 100%;">
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <h2>Reviews</h2>
+</div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" (submit)="onUpload()">
+          <button type="button" mat-stroked-button (click)="filePicker.click()">Pick Image</button>
+          <input class="imagePickerProfile" accept=".png,.jpg" type="file" #filePicker (change)="onImagePicked($event)">
+          <button type="submit" class="btn btn-primary">Upload image</button>
+        </form>
+        <div class="imagePreview">
+          <img [src]="imagePreview" class="center rounded-circle" style="width:200px;height: 200px;margin: auto;">
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-level1-land',
   templateUrl: './level1-land.component.html',
@@ -8,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class Level1LandComponent implements OnInit {
 
   selectedOption="Role : Researcher";
+
+  selectedValue='dfsf'
 
   ResearcherProfile:boolean=false;
   ResearcherPurchase:boolean=false;
@@ -19,6 +24,12 @@ export class Level1LandComponent implements OnInit {
     {value: 'Role : Level1',viewValue:'Click to switch to Role Level0'}
   ];
 
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -26,7 +37,7 @@ export class Level1LandComponent implements OnInit {
 
   onChangeSelect(value){
     this.selectedOption=value;
-
+    console.log(this.selectedOption)
   }
 
   initial(){

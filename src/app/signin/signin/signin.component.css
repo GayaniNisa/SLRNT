@@ -1,7 +1,5 @@
-main{
-  width: 40%;
-  margin: auto;
-  margin-top: 20px;
+.row{
+  margin-top:50px;
 }
 mat-card{
   width: 100%;
@@ -39,4 +37,9 @@ mat-card-content{
 }
 .btn-signup-hide{
   visibility: hidden;
+}
+
+div{
+  margin: 0px;
+  padding: 0px;
 }

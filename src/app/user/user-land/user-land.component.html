@@ -1,24 +1,20 @@
+
 <div class="row">
-  <div class="col-md-4">
-    <mat-card>
-      <mat-card-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <section class="section-nav" style="width: 100%;">
+          <div class="row example-button-row" style="width: 100%;">
+            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
+            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
+            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">Update Profile</button>
 
-        <mat-toolbar color="primary">
-          <span mat-button>
-            <a routerLink="/researcher" class="mat-body-2" (click)="onResearcherProfile()">MY PROFILE</a>
-          </span>
-        </mat-toolbar>
-        <mat-toolbar color="primary">
-          <span>
-            <a routerLink="/researcher" class="mat-body-2" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</a>
-          </span>
-        </mat-toolbar>
-
-      </mat-card-content>
-    </mat-card>
-
+          </div>
+          <mat-divider></mat-divider>
+        </section>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
   </div>
-  <div class="col-md-8">
-    <app-user-profile *ngIf="ResearcherProfile"></app-user-profile>
-  </div>
-  </div>
+</div>

@@ -1,8 +1,10 @@
-<main>
+<div class="row">
+  <div class="col-sm-4"></div>
+<div class="col-sm-4">
   <mat-card>
     <mat-card-header>
-    <div class="header-div">
-      <span class="mat-headline" style="text-align: center;margin-top: 40px;">Sign up to discover more</span>
+    <div class="header-div row">
+      <span class="mat-headline" style="text-align: center;">Sign up to discover more</span>
     </div>
     </mat-card-header>
     <mat-card-content>
@@ -18,11 +20,12 @@
           <input formControlName="password" type="password" matInput placeholder="Enter password">
           <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
         </mat-form-field>
+          <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
+
 
         <div style="width: 100%;margin-top: 30px;margin-bottom: 30px;">
           <!-- <button type="button"  class="btn">Sign in</button> -->
           <mat-chip-list aria-label="Fish selection" style="width: 100%;">
-            <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
             <mat-chip color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Login</span></mat-chip>
           </mat-chip-list>
         </div>
@@ -33,4 +36,10 @@
     </mat-card-content>
   </mat-card>
 
-</main>
+
+
+</div>
+<div class="col-sm-4"></div>
+
+
+</div>

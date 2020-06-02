@@ -9,6 +9,9 @@ import { LevelsLandComponent } from './institite/level2/levels-land/levels-land.
 import { UserLandComponent } from './user/user-land/user-land.component';
 import { SigninComponent } from './signin/signin/signin.component';
 import { HomeLandComponent } from './home/home-land/home-land.component';
+import { AddInstrumentsComponent } from './institite/level1/add-instruments/add-instruments.component';
+import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
+import { UserDisplayComponent } from './user/user-display/user-display.component';
 
 
 
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path: 'level0',component: Level0LandComponent},
   {path: 'level1',component: Level1LandComponent},
   {path: 'level2',component: LevelsLandComponent},
-  {path: 'researcher',component: UserLandComponent}
+  {path: 'researcher',component: UserLandComponent},
+  {path: 'researcher/view',component: UserDisplayComponent},
+  {path: 'level1/institute',component: InstituteDetailsComponent},
+  {path: 'level1/instruments',component: AddInstrumentsComponent},
 ];
 
 @NgModule({

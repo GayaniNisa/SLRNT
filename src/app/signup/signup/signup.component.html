@@ -1,48 +1,55 @@
-<main>
-  <mat-card>
-    <mat-card-header>
-    <div class="header-div">
-      <span class="mat-headline" style="text-align: center;margin-top: 40px;">Sign up to discover more</span>
-    </div>
-    </mat-card-header>
-    <mat-card-content>
-      <form [formGroup]="form" (submit)="onSignup()">
-        <mat-form-field class="example-full-width">
-          <mat-label>Full Name</mat-label>
-          <input formControlName="fullName" matInput placeholder="Enter full name">
-          <mat-error *ngIf="form.get('fullName').invalid">Enter your full name</mat-error>
-        </mat-form-field>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header>
+      <div class="header-div">
+        <span class="mat-headline" style="text-align: center;margin-top: 40px;">Sign up to discover more</span>
+      </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="form" (submit)="onSignup()">
+          <mat-form-field class="example-full-width">
+            <mat-label>Full Name</mat-label>
+            <input formControlName="fullName" matInput placeholder="Enter full name">
+            <mat-error *ngIf="form.get('fullName').invalid">Enter your full name</mat-error>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Username</mat-label>
-          <input formControlName="userName" matInput placeholder="Enter full name">
-          <mat-error *ngIf="form.get('userName').invalid">Enter your username</mat-error>
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input formControlName="userName" matInput placeholder="Enter full name">
+            <mat-error *ngIf="form.get('userName').invalid">Enter your username</mat-error>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Email address</mat-label>
-          <input formControlName="email" matInput placeholder="Enter email address">
-          <mat-error *ngIf="form.get('email').invalid">Enter a valid email</mat-error>
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email address</mat-label>
+            <input formControlName="email" matInput placeholder="Enter email address">
+            <mat-error *ngIf="form.get('email').invalid">Enter a valid email</mat-error>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
-          <input formControlName="password" type="password" matInput placeholder="Enter a password">
-          <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" type="password" matInput placeholder="Enter a password">
+            <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
+          </mat-form-field>
+          <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
 
-        <div style="width: 100%;margin-top: 30px;margin-bottom: 30px;">
-          <!-- <button type="button"  class="btn">Sign in</button> -->
-          <mat-chip-list aria-label="Fish selection" style="width: 100%;">
-            <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
-            <mat-chip type="submit" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Sign up</span></mat-chip>
-          </mat-chip-list>
-        </div>
-        <div *ngIf="signUpStatus">
-          {{signUpMsg}}
-        </div>
-      </form>
-    </mat-card-content>
-  </mat-card>
+          <div style="width: 100%;margin-top: 30px;margin-bottom: 30px;">
+            <!-- <button type="button"  class="btn">Sign in</button> -->
+            <mat-chip-list aria-label="Fish selection" style="width: 100%;">
 
-</main>
+              <mat-chip type="submit" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Sign up</span></mat-chip>
+            </mat-chip-list>
+          </div>
+          <div *ngIf="signUpStatus">
+            {{signUpMsg}}
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+
+
+  </div>
+  <div class="col-sm-4"></div>
+</div>
