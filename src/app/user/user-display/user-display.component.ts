@@ -22,6 +22,7 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
 
   form:FormGroup;
   imagePreview:string;
+  isUploaded:boolean=false;
 
   imageStatus:boolean=false;
 
@@ -80,6 +81,7 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
     };
     reader.readAsDataURL(file)
     console.log(this.imagePreview)
+    this.isUploaded=true
   }
 
   onUpload(){
@@ -87,7 +89,7 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
     this.userControl.uploadUserImage(this.form.value.image)
     .subscribe(data=>{
       console.log(data)
-      this.router.navigate([''])
+
     })
   }
 

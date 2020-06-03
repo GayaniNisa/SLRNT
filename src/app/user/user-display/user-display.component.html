@@ -28,7 +28,7 @@
                                   </form> -->
 
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLongImg">
                       Change profile picture
                     </button>
                   </div>
@@ -93,12 +93,12 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+<div class="modal fade" id="exampleModalLongImg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+        <h2 class="modal-title" id="exampleModalLongTitle">CHANGE YOUR PROFILE PICTURE</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -106,16 +106,15 @@
       <div class="modal-body">
         <form [formGroup]="form" (submit)="onUpload()">
           <button type="button" mat-stroked-button (click)="filePicker.click()">Pick Image</button>
-          <input class="imagePickerProfile" accept=".png,.jpg" type="file" #filePicker (change)="onImagePicked($event)">
-          <button type="submit" class="btn btn-primary">Upload image</button>
-        </form>
-        <div class="imagePreview">
-          <img [src]="imagePreview" class="center rounded-circle" style="width:200px;height: 200px;margin: auto;">
+          <p>Select a picture from your file system to view the preview</p>
+          <div class="imagePreview" *ngIf="isUploaded">
+            <img [src]="imagePreview" class="center rounded-circle" style="width:200px;height: 200px;margin: auto;">
 
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+          <input class="imagePickerProfile" accept=".png,.jpg" type="file" #filePicker (change)="onImagePicked($event)">
+          <button type="submit" class="btn btn-primary upload-btn">Upload image</button>
+        </form>
 
       </div>
     </div>
