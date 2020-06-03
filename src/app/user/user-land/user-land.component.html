@@ -2,19 +2,27 @@
 <div class="row">
   <div class="container">
     <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
+      <!-- <div class="col-sm-1"></div>
+      <div class="col-sm-10"> -->
         <section class="section-nav" style="width: 100%;">
           <div class="row example-button-row" style="width: 100%;">
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">Update Profile</button>
+            <button mat-button routerLink="/researcher" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
+            <button mat-button routerLink="/researcher" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
+            <button mat-button routerLink="/researcher" class="mat-body-2 profile-nav" (click)="onUpdateResearcher()">UPDATE PROFILE</button>
+            <button mat-button routerLink="/researcher" class="mat-body-2 profile-nav" (click)="onRegisterInstitute()">HOST YOUR OWN INSTITUTE</button>
 
           </div>
           <mat-divider></mat-divider>
         </section>
-      </div>
-      <div class="col-sm-1"></div>
+      <!-- </div>
+      <div class="col-sm-1"></div> -->
     </div>
   </div>
+</div>
+
+<div class="container">
+  <app-user-display *ngIf="ResearcherProfile"></app-user-display>
+
+  <app-user-institute-add *ngIf="RegisterInstitute"></app-user-institute-add>
+  <app-user-profile *ngIf="UpdateResearcher"></app-user-profile>
 </div>

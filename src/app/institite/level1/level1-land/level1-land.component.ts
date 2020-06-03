@@ -14,21 +14,17 @@ export class Level1LandComponent implements OnInit {
 
   selectedValue='dfsf'
 
-  ResearcherProfile:boolean=false;
+  ResearcherProfile:boolean=true;
   ResearcherPurchase:boolean=false;
-  InstituteProfile:boolean=false;
+  InstituteProfile:boolean=true;
   Level0DepartmentAdd:boolean=false;
 
   options= [
     {value: 'Role : Researcher',viewValue:'Click to switch to Role Researcher'},
-    {value: 'Role : Level1',viewValue:'Click to switch to Role Level0'}
+    {value: 'Role : Level1',viewValue:'Click to switch to Role Level1'}
   ];
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+
 
   constructor() { }
 

@@ -69,7 +69,7 @@ export class AddInstrumentsComponent implements OnInit {
 
 // };
 
-  constructor(private http: HttpClient, private instrumentControll: InstrumentControlService, private datePipe: DatePipe) {
+  constructor(private http: HttpClient, private instrumentControll: InstrumentControlService) {
     this.maxDate = new Date();
 
     this.maxDate.setDate(this.maxDate.getDate());
@@ -81,17 +81,6 @@ export class AddInstrumentsComponent implements OnInit {
   submit() {
 
     console.log(" " + this.instrumentName + " " + this.model + " " + this.brand + " " + this.manufacturedDate + " " + this.depriciatedDate + " " + this.price + " " + this.custodianEmail + " " + this.description);
-    // constructor(public image:string,public instrumentName:string,public manufacturedDate:Date,public depriciatedDate:Date,public state:number,public adminLevel_2:User,public price:number,public Description:string,public order:Order[],public comment:Comment[],public institute:Institute,public rating:number,public custodianMail:string){
-    // let formattedManufacturedDate=this.datePipe.transform(this.manufacturedDate, "yyyy-MM-dd");
-    // let formattedDepriciationDate=this.datePipe.transform(this.depriciatedDate, "yyyy-MM-dd");
-    // console.log(formattedManufacturedDate);
-    const files=new FormData();
-    files.append("imageArr",this.selectedFile1)
-    files.append("imageArr",this.selectedFile2)
-    files.append("imageArr",this.selectedFile3)
-    files.append("imageArr",this.selectedFile4)
-    files.append("imageArr",this.selectedFile5)
-    console.log(files)
 
     const instrument =new FormData()
 
@@ -181,28 +170,34 @@ export class AddInstrumentsComponent implements OnInit {
 
   onFileChanged(event) {
     const file = event.target.files[0];
+    console.log(file);
     // console.log(file);
   }
 
   onFileSelected1(event) {
     // console.log(event);
     this.selectedFile1 = <File>event.target.files[0];
+    console.log(this.selectedFile1);
   }
   onFileSelected2(event) {
     // console.log(event);
     this.selectedFile2 = <File>event.target.files[0];
+    console.log(this.selectedFile2);
   }
   onFileSelected3(event) {
     // console.log(event);
     this.selectedFile3 = <File>event.target.files[0];
+    console.log(this.selectedFile2);
   }
   onFileSelected4(event) {
     // console.log(event);
     this.selectedFile4 = <File>event.target.files[0];
+    console.log(this.selectedFile4);
   }
   onFileSelected5(event) {
     // console.log(event);
     this.selectedFile5 = <File>event.target.files[0];
+    console.log(this.selectedFile5);
   }
 
 }

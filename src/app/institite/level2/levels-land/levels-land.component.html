@@ -1,14 +1,14 @@
 <div class="row">
   <div class="container">
     <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
+      <!-- <div class="col-sm-1"></div>
+      <div class="col-sm-10"> -->
         <section class="section-nav" style="width: 100%;">
           <div class="row example-button-row" style="width: 100%;">
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onInstituteProfile()">INSTITUTE PROFILE</button>
-            <button mat-button routerLink="/level1" class="mat-body-2 profile-nav" (click)="onLevel2InstrumentManagement()">ADD INSTRUMENTS</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onInstituteProfile()">INSTITUTE PROFILE</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onLevel2InstrumentManagement()">MANAGE INSTRUMENTS</button>
             <div class="spacer"></div>
             <div>
               <mat-form-field>
@@ -23,9 +23,15 @@
           </div>
           <mat-divider></mat-divider>
         </section>
-      </div>
-      <div class="col-sm-1"></div>
+      <!-- </div>
+      <div class="col-sm-1"></div> -->
     </div>
   </div>
 </div>
 
+<div class="container">
+  <app-user-display *ngIf="ResearcherProfile && selectedOption=='Role : Researcher'"></app-user-display>
+
+  <app-institute-details *ngIf="InstituteProfile && selectedOption=='Role : Level2'"></app-institute-details>
+
+</div>

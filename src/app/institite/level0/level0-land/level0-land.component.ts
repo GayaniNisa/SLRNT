@@ -9,9 +9,9 @@ export class Level0LandComponent implements OnInit {
 
   selectedOption="Role : Researcher";
 
-  ResearcherProfile:boolean=false;
+  ResearcherProfile:boolean=true;
   ResearcherPurchase:boolean=false;
-  InstituteProfile:boolean=false;
+  InstituteProfile:boolean=true;
   Level1InstrumentsAdd:boolean=false;
 
   options= [

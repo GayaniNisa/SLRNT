@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-5 cardLeft">
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-md-11">
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -11,11 +11,11 @@
                 <div class="col-md-6">
                   <div class="row">
                     <div *ngIf="imageStatus" style="width:200px;height:200px;margin: auto;">
-                    <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="Cinque Terre"
+                    <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="default"
                       style="width: 100%;height:100%;">
                     </div>
                     <div *ngIf="!imageStatus" style="width:150px;height:150px;width: 100%;">
-                      <img [src]="imageUrl" class="rounded-circle" alt="Cinque Terre"
+                      <img [src]="imageUrl" class="rounded-circle" alt="Profile image"
                         style="width: 100%;height:100%;">
                       </div>
                       <!-- <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="Cinque Terre"
@@ -43,7 +43,7 @@
               <p class="username"><strong>User Full Name</strong></p>
               <p class="user-details">{{userName}}</p>
               <hr style="width: 80%;">
-              <p class="username"><strong>roles</strong></p>
+              <p class="username"><strong>Roles</strong></p>
               <p class="user-details">{{roles[0]}}</p>
               <p class="user-details">{{roles[1]}}</p>
               <hr style="width: 80%;">

@@ -1,0 +1,43 @@
+.row{
+  margin-top:50px;
+}
+mat-card{
+  width: 100%;
+}
+.header-div{
+  padding-top: 20px;
+}
+div{
+  width: 100%;
+  text-align: center;
+}
+span{
+  width: 100%;
+  margin: auto;
+}
+form{
+  width: 90%;
+  margin: auto;
+}
+mat-form-field{
+  width: 100%;
+  margin-top:20px
+}
+mat-card-content{
+  margin: auto;
+}
+
+.login-text{
+  width: 100%;
+  padding: auto;
+  margin: auto;
+}
+.chip-login{
+  margin: auto;
+}
+
+
+div{
+  margin: 0px;
+  padding: 0px;
+}

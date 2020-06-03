@@ -21,4 +21,8 @@ export class UserControlService {
     uploadedImageData.append('image',file)
     return this.http.post(this.BASE_URL+'/api/current/update-user-image',uploadedImageData)
   }
+
+  addInstitute(submitingData){
+    return this.http.post(this.BASE_URL+'/add/institute',submitingData)
+  }
 }

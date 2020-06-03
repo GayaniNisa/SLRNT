@@ -1,10 +1,10 @@
-<div style="background-color: aliceblue;">
+<div>
   <form #myForm="ngForm" (ngSubmit)="submit()">
       <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
-                  <h6 class="input_header"><strong>Instrument Name</strong></h6>
+
                   <input type="text" class="form-control m-1" placeholder="Enter Instrument Name" name="instrumentName"
                       [(ngModel)]="instrumentName">
               </div>
@@ -17,7 +17,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
-                      <h6 class="input_header"><strong>Model of The Instrument</strong></h6>
+                      <!-- <h6 class="input_header"><strong>Model of The Instrument</strong></h6> -->
                   <input type="text" class="form-control m-1" placeholder="Enter Model of the instrument" name="model"
                       [(ngModel)]="model">
               </div>
@@ -31,7 +31,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
-                      <h6 class="input_header"><strong>Brand of The Instrument</strong></h6>
+                      <!-- <h6 class="input_header"><strong>Brand of The Instrument</strong></h6> -->
                   <input type="text" class="form-control m-1" placeholder="Enter Brand of the instrument" name="brand"
                       [(ngModel)]="brand">
               </div>
@@ -45,13 +45,9 @@
               <div class="row">
                   <!-- <input type="text" class="form-control m-1" placeholder="Manufactured Date" name="manufacturedDate"
                           [(ngModel)]="manufacturedDate"> -->
-                          <h6 class="input_header"><strong>Manufactured Date</strong></h6>
-
-
-                  <!-- <input placeholder="Manufactured Date of the instrument" id="manufacturedDate" name="manufacturedDate"
-                      [(ngModel)]="manufacturedDate" [maxDate]="maxDate" type="text" bsDatepicker class="form-control m-1"> -->
-
-
+                          <!-- <h6 class="input_header"><strong>Manufactured Date</strong></h6> -->
+                  <input placeholder="Manufactured Date of the instrument" id="manufacturedDate" name="manufacturedDate"
+                      [(ngModel)]="manufacturedDate" [maxDate]="maxDate" type="text" bsDatepicker class="form-control m-1">
               </div>
           </div>
           <div class="col-md-1"></div>
@@ -64,14 +60,10 @@
               <div class="row">
                   <!-- <input type="text" class="form-control m-1" placeholder="Depriciated Date" name="depriciatedDate"
                           [(ngModel)]="depriciatedDate"> -->
-                          <h6 class="input_header"><strong>Depreciated Date</strong></h6>
-
-
-                  <!-- <input placeholder="Enter Depreciated Date" id="depriciatedDate" name="depriciatedDate"
+                          <!-- <h6 class="input_header"><strong>Depreciated Date</strong></h6> -->
+                  <input placeholder="Enter Depreciated Date" id="depriciatedDate" name="depriciatedDate"
                       [(ngModel)]="depriciatedDate" type="text" bsDatepicker class="form-control m-1"
-                      [minDate]="maxDate"> -->
-
-
+                      [minDate]="maxDate">
               </div>
           </div>
           <div class="col-md-1"></div>
@@ -81,7 +73,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
-                      <h6 class="input_header"><strong>Price of The Instrument</strong></h6>
+                      <!-- <h6 class="input_header"><strong>Price of The Instrument</strong></h6> -->
                   <input type="text" class="form-control m-1" placeholder="Enter Price you suppose to rent" name="price" [(ngModel)]="price">
               </div>
           </div>
@@ -103,7 +95,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
-                      <h6 class="input_header"><strong>Description (40 words)</strong></h6>
+                      <!-- <h6 class="input_header"><strong>Description (40 words)</strong></h6> -->
                   <textarea class="form-control m-1 textareaDescription" placeholder="Enter Description of the instrument" name="description" value="description"
                       [(ngModel)]="description"></textarea>
                   <!-- <input type="" class="form-control m-1" placeholder="Description of the instrument" name="description" [(ngModel)]="description"> -->
@@ -408,9 +400,40 @@
               Instrument adding successful..
           </div>
 
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="row">
+
+                            <input type="file" (change)="onFileSelected1($event)" class="form-control fileSelect" #img1>
+                            <button type="button" (click)="img1.click()" class="btn btn-dark">Upload image1</button>
 
 
-      <div class="row" style="background-color: aliceblue;">
+                            <input type="file" (change)="onFileSelected2($event)" class="form-control fileSelect" #img2>
+                            <button type="button" (click)="img2.click()" class="btn btn-dark">Upload image2</button>
+
+
+                            <input type="file" (change)="onFileSelected3($event)" class="form-control fileSelect" #img3>
+                            <button type="button" (click)="img3.click()" class="btn btn-dark">Upload image3</button>
+
+
+                            <input type="file" (change)="onFileSelected4($event)" class="form-control fileSelect" #img4>
+                            <button type="button" (click)="img4.click()" class="btn btn-dark">Upload image4</button>
+
+                            <input type="file" (change)="onFileSelected5($event)" class="form-control fileSelect" #img5>
+                            <button type="button" (click)="img5.click()" class="btn btn-dark">Upload image5</button>
+
+                        <!-- <tr class="m-2">
+                            <td><input type="file" (change)="onFileSelected6($event)" class="form-control"></td>
+                            <td><button type="button" (click)="onUpload6()" class="btn btn-dark">Upload image6</button></td>
+                        </tr> -->
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+      <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10">
               <div class="row">
@@ -423,39 +446,6 @@
 
   </form>
 
-  <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-          <div class="row">
-              <table>
-                  <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected1($event)" class="form-control" #img1></td>
-                      <td><button type="button" (click)="img1.click()" class="btn btn-dark">Upload image1</button></td>
-                  </tr>
-                  <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected2($event)" class="form-control" #img2></td>
-                      <td><button type="button" (click)="img2.click()" class="btn btn-dark">Upload image2</button></td>
-                  </tr>
-                  <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected3($event)" class="form-control" #img3></td>
-                      <td><button type="button" (click)="img3.click()" class="btn btn-dark">Upload image3</button></td>
-                  </tr>
-                  <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected4($event)" class="form-control" #img4></td>
-                      <td><button type="button" (click)="img4.click()" class="btn btn-dark">Upload image4</button></td>
-                  </tr>
-                  <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected5($event)" class="form-control" #img5></td>
-                      <td><button type="button" (click)="img5.click()" class="btn btn-dark">Upload image5</button></td>
-                  </tr>
-                  <!-- <tr class="m-2">
-                      <td><input type="file" (change)="onFileSelected6($event)" class="form-control"></td>
-                      <td><button type="button" (click)="onUpload6()" class="btn btn-dark">Upload image6</button></td>
-                  </tr> -->
-              </table>
-          </div>
-      </div>
-      <div class="col-md-1"></div>
-  </div>
+
 
 </div>

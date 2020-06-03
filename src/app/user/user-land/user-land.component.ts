@@ -9,9 +9,10 @@ export class UserLandComponent implements OnInit {
 
   selectedOption="Role : Researcher";
 
-  ResearcherProfile:boolean=false;
+  ResearcherProfile:boolean=true;
   ResearcherPurchase:boolean=false;
-
+  RegisterInstitute:boolean=false;
+  UpdateResearcher:boolean=false;
 
 
   constructor() { }
@@ -23,6 +24,8 @@ export class UserLandComponent implements OnInit {
   initial(){
     this.ResearcherProfile=false
     this.ResearcherPurchase=false
+    this.RegisterInstitute=false
+    this.UpdateResearcher=false
   }
 
 
@@ -38,6 +41,14 @@ export class UserLandComponent implements OnInit {
     console.log(this.ResearcherProfile+" "+this.ResearcherPurchase+" ")
   }
 
+  onRegisterInstitute(){
+    this.initial()
+    this.RegisterInstitute=true
+  }
 
+  onUpdateResearcher(){
+    this.initial()
+    this.UpdateResearcher=true
+  }
 
 }

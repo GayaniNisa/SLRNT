@@ -7,7 +7,18 @@
 .textareaDescription{
   height: 150px;
 }
-.input_header{
+/* .input_header{
   margin-top: 5px;
   margin-bottom: 6px;
+} */
+
+mat-form-field{
+  width: 100%;
+  margin: auto;
+}
+*:focus{
+  outline: none;
+}
+.fileSelect{
+  visibility: hidden;
 }

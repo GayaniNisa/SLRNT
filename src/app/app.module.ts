@@ -15,6 +15,11 @@ import { MatChipsModule } from '@angular/material/chips'
 import { MatButtonModule } from '@angular/material/button'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatExpansionModule } from '@angular/material/expansion'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import {MatNativeDateModule} from '@angular/material/core';
+
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { HomeLandComponent } from './home/home-land/home-land.component';
 import { HeaderComponent } from './header/header/header.component';
@@ -38,6 +43,7 @@ import { AddInstrumentsComponent } from './institite/level1/add-instruments/add-
 import { AddDepartmentComponent } from './institite/level0/add-department/add-department.component';
 import { UserDisplayComponent } from './user/user-display/user-display.component';
 import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
+import { UserInstituteAddComponent } from './user/user-institute-add/user-institute-add.component';
 
 
 @NgModule({
@@ -61,7 +67,8 @@ import { InstituteDetailsComponent } from './institite/institute-details/institu
     AddInstrumentsComponent,
     AddDepartmentComponent,
     UserDisplayComponent,
-    InstituteDetailsComponent
+    InstituteDetailsComponent,
+    UserInstituteAddComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +85,10 @@ import { InstituteDetailsComponent } from './institite/institute-details/institu
     MatButtonModule,
     MatDividerModule,
     MatExpansionModule,
-    HttpClientModule
+    MatDatepickerModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}

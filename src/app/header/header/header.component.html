@@ -62,15 +62,96 @@
         <a routerLink="/" class="mat-body-2">CONTACT US</a>
       </li>
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a routerLink="/signup" class="mat-body-2">SIGN UP</a>
+        <a routerLink="/" class="mat-body-2" data-toggle="modal" data-target="#exampleModal">SIGN UP</a>
       </li>
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a href="/signin" class="mat-body-2">SIGN IN</a>
+        <a routerLink="/" class="mat-body-2 signin-link" data-toggle="modal" data-target="#exampleModalLong">SIGN IN</a>
       </li>
       <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a src="/" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
+        <a routerLink="/" class="mat-body-2" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
       </li>
     </ul>
   </div>
 </nav>
 
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <!-- <div class="row"> -->
+          <!-- <div class="col-sm-4"></div> -->
+        <!-- <div class="col-sm-4"> -->
+          <!-- <mat-card>
+            <mat-card-header>
+            <div class="header-div row">
+              <span class="mat-headline" style="text-align: center;">Sign up to discover more</span>
+            </div>
+            </mat-card-header>
+            <mat-card-content> -->
+
+              <div class="row">
+              <form [formGroup]="form" (submit)="onLogin()">
+                <div class="row">
+                  <h1 style="width: 100%;text-align: center;">Signin</h1>
+                </div>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email address</mat-label>
+                  <input formControlName="userNameOrEmail" matInput placeholder="Enter full name">
+                  <mat-error *ngIf="form.get('userNameOrEmail').invalid">Enter valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Password</mat-label>
+                  <input formControlName="password" type="password" matInput placeholder="Enter password">
+                  <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
+                </mat-form-field>
+                  <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
+
+
+                <div style="width: 100%;margin-top: 10px;margin-bottom: 30px;">
+                  <!-- <button type="button"  class="btn">Sign in</button> -->
+                  <mat-chip-list aria-label="Fish selection" style="width: 100%;">
+                    <mat-chip color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text" style="text-align: center;">Login</span></mat-chip>
+                  </mat-chip-list>
+                </div>
+                <div>
+                  {{signInStatusMsg}}
+                </div>
+              </form>
+            </div>
+            <!-- </mat-card-content>
+          </mat-card> -->
+
+
+
+        <!-- </div>
+        <div class="col-sm-4"></div> -->
+
+
+        <!-- </div> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <app-signup></app-signup>
+      </div>
+    </div>
+  </div>
+</div>

@@ -29,12 +29,13 @@ export class SignupComponent implements OnInit {
   onSignup(){
     this.authService.signup(this.form.value.fullName,this.form.value.userName,this.form.value.email,this.form.value.password)
     .subscribe((data)=>{
+      this.form.reset()
       console.log(data)
       this.signUpStatus=true
       this.signUpMsg="signup successful"
 
     },error=>{
-
+      this.form.reset()
       this.signUpStatus=false
       this.signUpMsg="signup not successful"
     })

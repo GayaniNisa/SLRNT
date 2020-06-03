@@ -15,6 +15,51 @@ span{
 li{
   margin:1rem;
 }
-.modal-signup{
-  margin-top: 60px;
+
+/* margin to signin */
+
+
+
+/* 1
+span{
+  width: 100%;
+  margin: auto;
+} */
+/* form{
+  width: 100%;
+  margin: auto;
+} */
+
+
+
+.login-text{
+  width: 100%;
+  padding: auto;
+  margin: auto;
 }
+.chip-login{
+  margin: auto;
+}
+.btn-signup-hide{
+  visibility: hidden;
+}
+
+/* div{
+  margin: 0px;
+  padding: 0px;
+} */
+form{
+  width: 100%;
+  margin: 0px;
+  padding: 2rem;
+}
+mat-form-field{
+  width: 100%;
+  margin: auto;
+}
+/* .example-full-width{
+  width: 80%;
+  margin: auto;
+} */
+
+

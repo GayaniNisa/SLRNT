@@ -12,6 +12,7 @@ import { HomeLandComponent } from './home/home-land/home-land.component';
 import { AddInstrumentsComponent } from './institite/level1/add-instruments/add-instruments.component';
 import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
 import { UserDisplayComponent } from './user/user-display/user-display.component';
+import { UserInstituteAddComponent } from './user/user-institute-add/user-institute-add.component';
 
 
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'researcher',component: UserLandComponent},
   {path: 'researcher/view',component: UserDisplayComponent},
   {path: 'level1/institute',component: InstituteDetailsComponent},
-  {path: 'level1/instruments',component: AddInstrumentsComponent},
+  {path: 'instruments',component: AddInstrumentsComponent},
+  {path: 'user/add/institute',component: UserInstituteAddComponent}
 ];
 
 @NgModule({

@@ -9,14 +9,14 @@ export class LevelsLandComponent implements OnInit {
 
   selectedOption="Role : Researcher";
 
-  ResearcherProfile:boolean=false;
+  ResearcherProfile:boolean=true;
   ResearcherPurchase:boolean=false;
-  InstituteProfile:boolean=false;
+  InstituteProfile:boolean=true;
   Level2InstrumentManagement:boolean=false;
 
   options= [
     {value: 'Role : Researcher',viewValue:'Click to switch to Role Researcher'},
-    {value: 'Role : Level2',viewValue:'Click to switch to Role Level0'}
+    {value: 'Role : Level2',viewValue:'Click to switch to Role Level2'}
   ];
 
   constructor() { }

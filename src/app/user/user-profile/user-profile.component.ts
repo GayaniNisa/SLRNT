@@ -36,7 +36,6 @@ export class UserProfileComponent implements OnInit {
       console.log("current")
       console.log(data.user.userName)
       this.fullName=data.user.fullName;
-      this.image=data.user.image;
       console.log(this.fullName)
       console.log(this.fullName)
       this.userName=data.user.userName;
