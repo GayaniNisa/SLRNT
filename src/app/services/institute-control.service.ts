@@ -15,4 +15,10 @@ export class InstituteControlService {
   getInstitue(){
     return this.http.get<{success:Boolean,institute:Institute}>(this.BASE_URL+'/get/institute')
   }
+
+  addProfilePic(file:File){
+    let uploaded=new FormData();
+    uploaded.append('image',file)
+    return this.http.post(this.BASE_URL+'/update/institute-image',uploaded)
+  }
 }

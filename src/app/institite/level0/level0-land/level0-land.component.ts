@@ -13,6 +13,7 @@ export class Level0LandComponent implements OnInit {
   ResearcherPurchase:boolean=false;
   InstituteProfile:boolean=true;
   Level1InstrumentsAdd:boolean=false;
+  AllInstruments:boolean=false;
 
   options= [
     {value: 'Role : Researcher',viewValue:'Click to switch to Role Researcher'},
@@ -34,6 +35,7 @@ export class Level0LandComponent implements OnInit {
     this.Level1InstrumentsAdd=false
     this.ResearcherProfile=false
     this.ResearcherPurchase=false
+    this.AllInstruments=false
   }
 
 
@@ -59,5 +61,10 @@ export class Level0LandComponent implements OnInit {
     this.initial()
     this.Level1InstrumentsAdd=true
     console.log(this.ResearcherProfile+" "+this.ResearcherPurchase+" "+this.InstituteProfile+" "+this.Level1InstrumentsAdd)
+  }
+
+  onAllInstruemts(){
+    this.initial()
+    this.AllInstruments=true
   }
 }

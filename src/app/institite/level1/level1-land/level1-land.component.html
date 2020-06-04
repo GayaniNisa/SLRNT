@@ -9,6 +9,7 @@
             <button mat-button routerLink="/level1" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
             <button mat-button routerLink="/level1" *ngIf="selectedOption=='Role : Level1'" class="mat-body-2 profile-nav" (click)="onInstituteProfile()">INSTITUTE PROFILE</button>
             <button mat-button routerLink="/level1" *ngIf="selectedOption=='Role : Level1'" class="mat-body-2 profile-nav" (click)="onLevel0DepartmentAdd()">ADD INSTRUMENTS</button>
+            <button mat-button routerLink="/level1" *ngIf="selectedOption=='Role : Level1'" class="mat-body-2 profile-nav" (click)="onAllInstruemts()">VIEW ALL INSTRUMENTS WITHIN DEPARTMENT</button>
             <div class="spacer"></div>
             <div>
               <mat-form-field>
@@ -34,5 +35,6 @@
 
     <app-institute-details *ngIf="InstituteProfile && selectedOption=='Role : Level1'"></app-institute-details>
     <app-add-instruments *ngIf="Level0DepartmentAdd && selectedOption=='Role : Level1'"></app-add-instruments>
+    <app-level1-view-instruments *ngIf="AllInstruments && selectedOption=='Role : Level1'"></app-level1-view-instruments>
   </div>
 

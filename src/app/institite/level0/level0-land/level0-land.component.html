@@ -7,8 +7,10 @@
           <div class="row example-button-row" style="width: 100%;">
             <button mat-button routerLink="/level0" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherProfile()">MY PROFILE</button>
             <button mat-button routerLink="/level0" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
+
             <button mat-button routerLink="/level0" *ngIf="selectedOption=='Role : Level0'" class="mat-body-2 profile-nav" (click)="onInstituteProfile()">INSTITUTE PROFILE</button>
             <button mat-button routerLink="/level0" *ngIf="selectedOption=='Role : Level0'" class="mat-body-2 profile-nav" (click)="onLevel1InstrumentsAdd()">ADD DEPARTMENT</button>
+            <button mat-button routerLink="/level0" *ngIf="selectedOption=='Role : Level0'" class="mat-body-2 profile-nav" (click)="onAllInstruemts()">VIEW ALL INSTRUMENTS WITHIN INSTITUTE</button>
             <div class="spacer"></div>
             <div>
               <mat-form-field>
@@ -33,6 +35,7 @@
 
   <app-institute-details *ngIf="InstituteProfile && selectedOption=='Role : Level0'"></app-institute-details>
   <app-add-department *ngIf="Level1InstrumentsAdd && selectedOption=='Role : Level0'"></app-add-department>
+  <app-level0-view-instruments *ngIf="AllInstruments && selectedOption=='Role : Level0'"></app-level0-view-instruments>
 </div>
 
 

@@ -11,29 +11,29 @@
         <div class="row">
           <h1 style="text-align: center;width: 100%;">Sign up for discover..</h1>
         </div>
-        <form [formGroup]="form" (submit)="onSignup()">
+        <form [formGroup]="form" (submit)="onSignup()" #formDirective="ngForm" id="formSignUp">
           <mat-form-field class="example-full-width">
             <mat-label>Full Name</mat-label>
             <input formControlName="fullName" matInput placeholder="Enter full name">
-            <mat-error *ngIf="form.get('fullName').invalid">Enter your full name</mat-error>
+            <mat-error *ngIf="form.get('fullName').invalid && form.controls['fullName'].touched">Enter your full name</mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <!-- <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
             <input formControlName="userName" matInput placeholder="Enter full name">
-            <mat-error *ngIf="form.get('userName').invalid">Enter your username</mat-error>
-          </mat-form-field>
+            <mat-error *ngIf="form.get('userName').invalid && form.controls['userName'].touched">Enter your username</mat-error>
+          </mat-form-field> -->
 
           <mat-form-field class="example-full-width">
             <mat-label>Email address</mat-label>
             <input formControlName="email" matInput placeholder="Enter email address">
-            <mat-error *ngIf="form.get('email').invalid">Enter a valid email</mat-error>
+            <mat-error *ngIf="form.get('email').invalid && form.controls['email'].touched">Enter a valid email</mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
             <input formControlName="password" type="password" matInput placeholder="Enter a password">
-            <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
+            <mat-error *ngIf="form.get('password').invalid && form.controls['password'].touched">Enter your password</mat-error>
           </mat-form-field>
           <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
 
@@ -41,7 +41,7 @@
             <!-- <button type="button"  class="btn">Sign in</button> -->
             <mat-chip-list aria-label="Fish selection" style="width: 100%;">
 
-              <mat-chip type="submit" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Sign up</span></mat-chip>
+              <mat-chip [disabled]="form.invalid" type="submit" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Sign up</span></mat-chip>
             </mat-chip-list>
           </div>
           <div *ngIf="signUpStatus">

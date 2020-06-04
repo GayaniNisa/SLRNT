@@ -60,11 +60,14 @@ export class SigninComponent implements OnInit {
         this.router.navigateByUrl('level2');
         console.log("inside level2");
       }
-      // this.form.reset()
+
+      this.form.reset()
 
     },error=>{
       this.signInStatus=false
       this.signInStatusMsg="sign in not successful"
+      this.form.reset()
     })
+
   }
 }

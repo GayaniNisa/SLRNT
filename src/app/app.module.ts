@@ -44,6 +44,9 @@ import { AddDepartmentComponent } from './institite/level0/add-department/add-de
 import { UserDisplayComponent } from './user/user-display/user-display.component';
 import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
 import { UserInstituteAddComponent } from './user/user-institute-add/user-institute-add.component';
+import { Level0ViewInstrumentsComponent } from './institite/level0/level0-view-instruments/level0-view-instruments.component';
+import { Level1ViewInstrumentsComponent } from './institite/level1/level1-view-instruments/level1-view-instruments.component';
+import { Level2ViewInstrumentsComponent } from './institite/level2/level2-view-instruments/level2-view-instruments.component';
 
 
 @NgModule({
@@ -68,7 +71,10 @@ import { UserInstituteAddComponent } from './user/user-institute-add/user-instit
     AddDepartmentComponent,
     UserDisplayComponent,
     InstituteDetailsComponent,
-    UserInstituteAddComponent
+    UserInstituteAddComponent,
+    Level0ViewInstrumentsComponent,
+    Level1ViewInstrumentsComponent,
+    Level2ViewInstrumentsComponent
   ],
   imports: [
     BrowserModule,

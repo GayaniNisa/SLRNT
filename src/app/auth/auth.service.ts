@@ -29,18 +29,19 @@ interface Roles{
 }
 
 export interface Institute{
-  instituteHead:User,
-  instituteName:string,
-  instituteEmail:string,
-  no:string,
-  street:string,
-  city:string,
-  province:string,
-  instituteTelephone:string,
-  rating:string,
-  createdAt:string,
-  departments:Department[],
-  instrumentCount:number
+  instituteHead:User;
+  instituteName:string;
+  instituteEmail:string;
+  no:string;
+  street:string;
+  city:string;
+  province:string;
+  instituteTelephone:string;
+  rating:string;
+  createdAt:string;
+  departments:Department[];
+  instrumentCount:number;
+  image:string;
 }
 
 export interface Department{
@@ -102,10 +103,10 @@ export class AuthService {
     return this.http.post<{accessToken:string,tokenType:string,user:User}>(this.BASE_URL+'/api/auth/signin',postData);
 
   }
-  signup(fullName:string,userName:string,email:string,password:string){
+  signup(fullName:string,email:string,password:string){
     console.log("sending")
 
-    let signUpData={fullName:fullName,userName:userName,email:email,password:password}
+    let signUpData={fullName:fullName,email:email,password:password}
     return this.http.post<{message:string,success:Boolean,userId:string}>(this.BASE_URL+'/api/auth/signup',signUpData);
   }
 

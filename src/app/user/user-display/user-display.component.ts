@@ -89,7 +89,7 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
     this.userControl.uploadUserImage(this.form.value.image)
     .subscribe(data=>{
       console.log(data)
-
+      this.ngOnInit()
     })
   }
 

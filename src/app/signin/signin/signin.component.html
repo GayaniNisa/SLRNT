@@ -12,13 +12,13 @@
         <mat-form-field class="example-full-width">
           <mat-label>Email address</mat-label>
           <input formControlName="userNameOrEmail" matInput placeholder="Enter full name">
-          <mat-error *ngIf="form.get('userNameOrEmail').invalid">Enter valid email</mat-error>
+          <mat-error *ngIf="form.get('userNameOrEmail').invalid && form.controls['userNameOrEmail'].touched">Enter valid email</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
           <input formControlName="password" type="password" matInput placeholder="Enter password">
-          <mat-error *ngIf="form.get('password').invalid">Enter your password</mat-error>
+          <mat-error *ngIf="form.get('password').invalid && form.controls['password'].touched">Enter your password</mat-error>
         </mat-form-field>
           <button class="btn btn-primary btn-signup-hide" #submitBtn></button>
 
@@ -26,7 +26,7 @@
         <div style="width: 100%;margin-top: 30px;margin-bottom: 30px;">
           <!-- <button type="button"  class="btn">Sign in</button> -->
           <mat-chip-list aria-label="Fish selection" style="width: 100%;">
-            <mat-chip color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Login</span></mat-chip>
+            <mat-chip [disabled]="form.invalid" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Login</span></mat-chip>
           </mat-chip-list>
         </div>
         <div>

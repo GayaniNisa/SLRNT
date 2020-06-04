@@ -21,7 +21,7 @@ export class UserInstituteAddComponent implements OnInit {
       street:new FormControl(null,{validators:[Validators.required]}),
       city:new FormControl(null,{validators:[Validators.required]}),
       province:new FormControl(null,{validators:[Validators.required]}),
-      instituteTelephone:new FormControl(null,{validators:[Validators.required,Validators.max(10)]})
+      instituteTelephone:new FormControl(null,{validators:[Validators.required,Validators.min(10)]})
     })
   }
 
