@@ -66,3 +66,18 @@ mat-form-field{
   outline: none;
 }
 
+.modal-dialog {
+  margin: 20vh auto 0px auto;
+  z-index: 0px !important;
+}
+
+.custom-class{
+  color: white;
+  background-color: red;
+  z-index: 10000;
+}
+
+.cdk-overlay-container {
+  /* position: fixed; */
+  z-index: 20000 !important;
+}

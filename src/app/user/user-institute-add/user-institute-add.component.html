@@ -13,52 +13,55 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Institute Name</mat-label>
-          <input formControlName="instituteName" matInput placeholder="Enter full name">
+          <input formControlName="instituteName" matInput placeholder="Enter institute name">
           <mat-error *ngIf="form.get('instituteName').invalid">Enter institute name</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Institute Email</mat-label>
-          <input formControlName="instituteEmail" matInput placeholder="Enter full name">
+          <input formControlName="instituteEmail" matInput placeholder="Enter institute email">
           <mat-error *ngIf="form.get('instituteEmail').invalid">Enter institute email</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>No</mat-label>
-          <input formControlName="no" matInput placeholder="Enter full name">
+          <mat-label>Address - no</mat-label>
+          <input formControlName="no" matInput placeholder="Enter address no">
           <mat-error *ngIf="form.get('no').invalid">Enter address no</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Street</mat-label>
-          <input formControlName="street" matInput placeholder="Enter full name">
+          <mat-label>Address - street</mat-label>
+          <input formControlName="street" matInput placeholder="Enter address street">
           <mat-error *ngIf="form.get('street').invalid">Enter street</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>City</mat-label>
-          <input formControlName="city" matInput placeholder="Enter full name">
+          <mat-label>Address - City</mat-label>
+          <input formControlName="city" matInput placeholder="Enter city">
           <mat-error *ngIf="form.get('city').invalid">Enter city</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Province</mat-label>
-          <input formControlName="province" matInput placeholder="Enter full name">
+          <input formControlName="province" matInput placeholder="Enter province">
           <mat-error *ngIf="form.get('province').invalid">Enter province</mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Institute Telephone No</mat-label>
-          <input formControlName="instituteTelephone" matInput placeholder="Enter full name">
+          <input maxlength="10" formControlName="instituteTelephone" matInput placeholder="Enter telephone no">
           <mat-error *ngIf="form.get('instituteTelephone').invalid">Enter institute telephone no</mat-error>
         </mat-form-field>
 
-          <button type="submit" color="primary" mat-raised-button>Add Institute</button>
-
-
-
+          <button type="submit" [disabled]="form.invalid" color="primary" mat-raised-button>Add Institute</button>
+          <div class="alert alert-success mt-3" *ngIf="createOk">
+            {{instituteCreateMsg}}
+                      </div>
+                      <div class="alert alert-warn mt-3" *ngIf="createNotOk">
+            {{instituteCreateMsg}}
+                      </div>
         <div>
-          {{instituteCreateMsg}}
+
         </div>
       </form>
     </mat-card-content>

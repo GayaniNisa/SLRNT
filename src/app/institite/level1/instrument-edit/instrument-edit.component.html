@@ -1,0 +1,525 @@
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography">
+  <form #myForm="ngForm" (ngSubmit)="submit()">
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">General Details about instrument</h6>
+          <hr>
+        </div>
+
+
+        <div class="row">
+
+          <input type="text" class="form-control m-1" placeholder="Enter Instrument Name" name="instrumentName"
+            [(ngModel)]="instrumentName">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <h6 class="input_header"><strong>Model of The Instrument</strong></h6> -->
+          <input type="text" class="form-control m-1" placeholder="Enter Model of the instrument" name="model"
+            [(ngModel)]="model">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <h6 class="input_header"><strong>Brand of The Instrument</strong></h6> -->
+          <input type="text" class="form-control m-1" placeholder="Enter Brand of the instrument" name="brand"
+            [(ngModel)]="brand">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <input type="text" class="form-control m-1" placeholder="Manufactured Date" name="manufacturedDate"
+                          [(ngModel)]="manufacturedDate"> -->
+          <!-- <h6 class="input_header"><strong>Manufactured Date</strong></h6> -->
+          <input placeholder="Manufactured Date of the instrument" id="manufacturedDate" name="manufacturedDate"
+            [(ngModel)]="manufacturedDate" [maxDate]="maxDate" type="text" bsDatepicker class="form-control m-1">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <input type="text" class="form-control m-1" placeholder="Depriciated Date" name="depriciatedDate"
+                          [(ngModel)]="depriciatedDate"> -->
+          <!-- <h6 class="input_header"><strong>Depreciated Date</strong></h6> -->
+          <input placeholder="Enter Depreciated Date" id="depriciatedDate" name="depriciatedDate"
+            [(ngModel)]="depriciatedDate" type="text" bsDatepicker class="form-control m-1" [minDate]="maxDate">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <h6 class="input_header"><strong>Price of The Instrument</strong></h6> -->
+          <input type="text" class="form-control m-1" placeholder="Enter Price you suppose to rent" name="price"
+            [(ngModel)]="price">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <!--
+              <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                          <div class="row">
+                              <input type="text" class="form-control m-1" placeholder="Price1" name="price1" [(ngModel)]="price1">
+                          </div>
+                      </div>
+                      <div class="col-md-1"></div>
+                  </div> -->
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <!-- <h6 class="input_header"><strong>Description (40 words)</strong></h6> -->
+          <textarea class="form-control m-1 textareaDescription" placeholder="Enter Description of the instrument"
+            name="description" value="description" [(ngModel)]="description"></textarea>
+          <!-- <input type="" class="form-control m-1" placeholder="Description of the instrument" name="description" [(ngModel)]="description"> -->
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <hr style="width: 100%;">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">Technical Specifications</h6>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="card card-specification" *ngIf="!(specificationCount==0)">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-10">
+                  <h5>Added Specifications</h5>
+                </div>
+                <div class="col-md-2">
+                  <a (click)="clearSpecifications()"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <ul>
+                <li *ngFor="let specificationTech of specificationTechs">
+                  {{specificationTech}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <input type="text" class="form-control m-1"
+                placeholder="Type Technical Specifications of the instrument One By One" name="specTech"
+                [(ngModel)]="specTech">
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <button class="btn btn-dark m-1" type="button" style="width: 100%;"
+                (click)="pushSpecification()">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <hr style="width: 100%;">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">Strengths</h6>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="card card-specification" *ngIf="!(strengthCount==0)">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-10">
+                  <h5>Added stengths of your instrument</h5>
+                </div>
+                <div class="col-md-2">
+                  <a (click)="clearStrengths()"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <ul>
+                <li *ngFor="let strength of strengths">
+                  {{strength}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <input type="text" class="form-control m-1" placeholder="Type Strengths of the instrument One By One"
+                name="strength" [(ngModel)]="strength">
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <button class="btn btn-dark m-1" type="button" style="width: 100%;" (click)="pushStrengths()">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <hr style="width: 100%;">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">Limitations</h6>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="card card-specification" *ngIf="!(limitationCount==0)">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-10">
+                  <h5>Added limitations of the instrument</h5>
+                </div>
+                <div class="col-md-2">
+                  <a (click)="clearLimitations()"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <ul>
+                <li *ngFor="let limitation of limitations">
+                  {{limitation}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <input type="text" class="form-control m-1" placeholder="Type limitations of the instrument One By One"
+                name="limitation" [(ngModel)]="limitation">
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <button class="btn btn-dark m-1" type="button" style="width: 100%;"
+                (click)="pushLimitations()">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <hr style="width: 100%;">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">Applications</h6>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="card card-specification" *ngIf="!(applicationCount==0)">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-10">
+                  <h5>Added Applications of the instrument</h5>
+                </div>
+                <div class="col-md-2">
+                  <a (click)="clearApplications()"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <ul>
+                <li *ngFor="let application of applications">
+                  {{application}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <input type="text" class="form-control m-1" placeholder="Type Applications of the instrument One By One"
+                name="application" [(ngModel)]="application">
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <button class="btn btn-dark m-1" type="button" style="width: 100%;"
+                (click)="pushApplications()">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <hr style="width: 100%;">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <h6 class="input_header">Custodian's Email Address</h6>
+          <input type="text" class="form-control m-1" placeholder="Enter Mail Of The Custodian" name="custodianEmail"
+            [(ngModel)]="custodianEmail">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-2">
+        <input type="file" accept=".png,.jpg" (change)="onFileSelected1($event)" class="form-control fileSelect" #img1>
+        <button type="button" (click)="img1.click()" class="btn btn-dark" style="width: 150px;">Upload image1</button>
+        <div class="imagePreview1 mt-4" *ngIf="!isUploaded1">
+          <img [src]="'http://localhost:8080/'+instrument?.images[0]" style="width: 100%;height: 100%;">
+          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[0]" style="width: 100%;height: 100%;"> -->
+        </div>
+        <div class="imagePreview1 mt-4" *ngIf="isUploaded1">
+          <img [src]="imagePreview1" style="width: 100%;height: 100%;">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <input type="file" accept=".png,.jpg" (change)="onFileSelected2($event)" class="form-control fileSelect" #img2>
+        <button type="button" (click)="img2.click()" class="btn btn-dark" style="width: 150px;">Upload image2</button>
+        <div class="imagePreview2 mt-4" *ngIf="!isUploaded2">
+          <img [src]="'http://localhost:8080/'+instrument?.images[1]" style="width: 100%;height: 100%;">
+          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[1]" style="width: 100%;height: 100%;"> -->
+        </div>
+        <div class="imagePreview2 mt-4" *ngIf="isUploaded2">
+          <img [src]="imagePreview2" style="width: 100%;height: 100%;">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <input type="file" accept=".png,.jpg" (change)="onFileSelected3($event)" class="form-control fileSelect" #img3>
+        <button type="button" (click)="img3.click()" class="btn btn-dark" style="width: 150px;">Upload image3</button>
+        <div class="imagePreview3 mt-4" *ngIf="!isUploaded3">
+          <img [src]="'http://localhost:8080/'+instrument?.images[2]" style="width: 100%;height: 100%;">
+          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[2]" style="width: 100%;height: 100%;"> -->
+        </div>
+        <div class="imagePreview3 mt-4" *ngIf="isUploaded3">
+          <img [src]="imagePreview3" style="width: 100%;height: 100%;">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <input type="file" accept=".png,.jpg" (change)="onFileSelected4($event)" class="form-control fileSelect" #img4>
+        <button type="button" (click)="img4.click()" class="btn btn-dark" style="width: 150px;">Upload image4</button>
+        <div class="imagePreview4 mt-4" *ngIf="!isUploaded4">
+          <img [src]="'http://localhost:8080/'+instrument?.images[3]" style="width: 100%;height: 100%;">
+          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[3]" style="width: 100%;height: 100%;"> -->
+        </div>
+        <div class="imagePreview4 mt-4" *ngIf="isUploaded4">
+          <img [src]="imagePreview4" style="width: 100%;height: 100%;">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <input type="file"  accept=".png,.jpg" (change)="onFileSelected5($event)" class="form-control fileSelect" #img5>
+        <button type="button" (click)="img5.click()" class="btn btn-dark" style="width: 150px;">Upload image5</button>
+        <div class="imagePreview5 mt-4" *ngIf="!isUploaded5">
+          <img [src]="'http://localhost:8080/'+instrument?.images[4]" style="width: 100%;height: 100%;">
+          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[4]" style="width: 100%;height: 100%;"> -->
+        </div>
+        <div class="imagePreview5 mt-4" *ngIf="isUploaded5">
+          <img [src]="imagePreview5" style="width: 100%;height: 100%;">
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+
+
+
+
+    <!-- <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="row">
+
+                            <input type="file" (change)="onFileSelected1($event)" class="form-control fileSelect" #img1>
+                            <button type="button" (click)="img1.click()" class="btn btn-dark">Upload image1</button>
+
+
+                            <input type="file" (change)="onFileSelected2($event)" class="form-control fileSelect" #img2>
+                            <button type="button" (click)="img2.click()" class="btn btn-dark">Upload image2</button>
+
+
+                            <input type="file" (change)="onFileSelected3($event)" class="form-control fileSelect" #img3>
+                            <button type="button" (click)="img3.click()" class="btn btn-dark">Upload image3</button>
+
+
+                            <input type="file" (change)="onFileSelected4($event)" class="form-control fileSelect" #img4>
+                            <button type="button" (click)="img4.click()" class="btn btn-dark">Upload image4</button>
+
+                            <input type="file" (change)="onFileSelected5($event)" class="form-control fileSelect" #img5>
+                            <button type="button" (click)="img5.click()" class="btn btn-dark">Upload image5</button>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div> -->
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <div class="row">
+          <!-- <button class="btn btn-success m-5 center" style="margin: auto;margin-top:auto;width: 100%;" type="submit"> ADD
+            INSTRUMENT</button> -->
+
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-success m-5" style="margin: auto;" type="submit"> ADD INSTRUMENT</button>
+      </div>
+    <div class="alert alert-danger" role="alert" *ngIf="Nsuccess">
+      Instrument updating not successfull...
+    </div>
+
+
+
+    <div class="alert alert-success" role="alert" *ngIf="success">
+      Instrument updating successful..
+    </div>
+  </form>
+
+
+
+
+</mat-dialog-content>
+<!-- <mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>Update instrument details</button>
+</mat-dialog-actions> -->

@@ -1,1 +1,49 @@
-<p>order-land works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p class="mt-5" style="text-align: center;" *ngIf="instrumentList.length===0">No search result found</p>
+      <hr *ngIf="instrumentList.length===0">
+      <div *ngIf="instrumentList.length!==0">
+        <div class="row card card-description" *ngFor="let instrument of instrumentList"
+          (click)="onNavigateToInstrument(instrument._id)">
+          <div class="row" style="height: auto;">
+            <div class="col-md-4 image_class" style="height: 200px;width: 200px;">
+              <img [src]="'http://localhost:8080/'+instrument.images[0]" style="height: 100%;width: 100%;">
+              <!-- <img [src]="'http://labnet.lk:8080/'+instrument.images[0]" style="height: 100%;width: 100%;"> -->
+            </div>
+            <div class="col-md-8 m-0">
+              <div class="card-body item-description d-flex flex-column" style="height: 100%;">
+                <h4 class="card-title">{{instrument.instrumentName}}</h4>
+                <p class="card-text">{{instrument.description}}</p>
+
+                <p class="mt-auto" style="text-align: right;">{{instrument.price | currency:'LKR'}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="instrumentList.length===0">
+        <div class="row card card-description" *ngFor="let instrument of randomInstrumentList"
+          (click)="onNavigateToInstrument(instrument._id)">
+          <div class="row" style="height: auto;">
+            <div class="col-md-4 image_class" style="height: 200px;width: 200px;">
+              <img [src]="'http://localhost:8080/'+instrument.images[0]" style="height: 100%;width: 100%;">
+              <!-- <img [src]="'http://labnet.lk:8080/'+instrument.images[0]" style="height: 100%;width: 100%;"> -->
+            </div>
+            <div class="col-md-8 m-0">
+              <div class="card-body item-description d-flex flex-column" style="height: 100%;">
+                <h4 class="card-title">{{instrument.instrumentName}}</h4>
+                <p class="card-text">{{instrument.description}}</p>
+
+                <p class="mt-auto" style="text-align: right;">{{instrument.price | currency:'LKR'}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

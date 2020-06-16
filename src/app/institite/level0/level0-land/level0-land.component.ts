@@ -27,7 +27,11 @@ export class Level0LandComponent implements OnInit {
 
   onChangeSelect(value){
     this.selectedOption=value;
-
+    if(value==='Role : Researcher'){
+      this.ResearcherProfile=true
+    }else if(value==='Role : Level0'){
+      this.InstituteProfile=true
+    }
   }
 
   initial(){

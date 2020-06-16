@@ -1,0 +1,138 @@
+.img-hover-zoom1{
+  height: 400px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom1 img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom1:hover img {
+  transform: scale(1.1);
+}
+
+.img-hover-zoom2{
+  height: 200px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom2 img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom2:hover img {
+  transform: scale(1.1);
+}
+
+.img-hover-zoom3{
+  height: 200px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom3 img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom3:hover img {
+  transform: scale(1.1);
+}
+.image-container{
+    height: auto;
+}
+.container_left{
+ float: left;
+ width: 60%;
+ font-family: Arial, Helvetica, sans-serif;
+ line-height: 200%;
+ margin-top: 10px;
+}
+.container_right{
+ float: left;
+ width: 40%;
+}
+.product_description{
+ text-align: justify;
+}
+.right_img{
+ padding: 0px;
+}
+.header_desc{
+font-weight: bold;
+}
+.item_desc{
+margin-top: 30px;
+}
+.header{
+ font-size: 18px;
+ font-weight: bold;
+}
+
+.first{
+color: darkslategrey;
+
+}
+.second{
+color: gray;
+}
+.rate{
+font-size: 20px;
+}
+ul{
+list-style-type: none;
+}
+.ulApplications{
+list-style-type: disc;
+}
+.ul_specification{
+list-style-type: disc;
+}
+
+ul li{
+margin-left: 28px;
+}
+
+#startDate:focus{
+outline: transparent;
+}
+
+#bookedRange{
+width: 100%;
+text-align: center;
+}
+.availabilityBtn{
+width: 100%;
+}
+.a1{
+width: 100%;
+}
+.card_reservation{
+width: 100%;
+}
+.btn_reserve{
+width: 100%;
+}
+/* ul li span{
+text-align: right;
+position: absolute;
+} */
+
+.btn_reserve{
+  border-radius: 25px;
+}
+
+.availabilityBtn{
+  border-radius: 25px;
+}
+
+/* Rating hover */
+
+/*
+.s2:hover .star2{
+  color: yellow;
+} */

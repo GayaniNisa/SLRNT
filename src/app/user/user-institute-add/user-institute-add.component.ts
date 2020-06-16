@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserControlService } from 'src/app/services/user-control.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-institute-add',
@@ -10,8 +11,10 @@ import { UserControlService } from 'src/app/services/user-control.service';
 export class UserInstituteAddComponent implements OnInit {
   form:FormGroup;
   instituteCreateMsg:string;
+  createOk=false;
+  createNotOk=false;
 
-  constructor(public userControl:UserControlService) { }
+  constructor(public userControl:UserControlService,public router:Router) { }
 
   ngOnInit(): void {
     this.form=new FormGroup({
@@ -37,6 +40,13 @@ export class UserInstituteAddComponent implements OnInit {
     this.userControl.addInstitute(submitingData)
     .subscribe(data=>{
       console.log(data)
+      this.instituteCreateMsg=data.message
+      this.createOk=true
+      this.router.navigate([''])
+    },error=>{
+      console.log(error)
+      this.instituteCreateMsg=error.message
+      this.createNotOk=true
     })
 
   }

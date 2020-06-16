@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserControlService } from 'src/app/services/user-control.service';
 import { Router } from '@angular/router';
+import { OrderControlService } from 'src/app/services/order-control.service';
 
 declare var $: any;
 
@@ -12,6 +13,8 @@ declare var $: any;
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit,OnDestroy {
+
+  instrumentList;
 
   userName:string;
   roles:string[]=[];
@@ -26,7 +29,11 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
 
   imageStatus:boolean=false;
 
-  constructor(public authService:AuthService,public userControl:UserControlService,public router:Router) { }
+  responseMsg:string;
+  rsponseStatusOk:boolean=false;
+  rsponseStatusNot:boolean=false;
+
+  constructor(public authService:AuthService,public orderControl:OrderControlService,public userControl:UserControlService,public router:Router) { }
 
   ngOnInit(): void {
     this.form=new FormGroup({
@@ -53,6 +60,7 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
       this.mobileNo=data.user.mobileNo
       let imageUrlOriginal=data.user.image
       this.imageUrl="http://localhost:8080/"+data.user.image
+      // this.imageUrl="http://labnet.lk:8080/"+data.user.image
       console.log(this.imageUrl)
       if(imageUrlOriginal==undefined){
         console.log("no image "+imageUrlOriginal)
@@ -63,6 +71,12 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
         this.imageStatus=false
         console.log(this.imageStatus)
       }
+    })
+
+    this.orderControl.getUserAllOrders()
+    .subscribe(data=>{
+      console.log(data)
+      this.instrumentList=data.orderList
     })
   }
 
@@ -89,7 +103,15 @@ export class UserDisplayComponent implements OnInit,OnDestroy {
     this.userControl.uploadUserImage(this.form.value.image)
     .subscribe(data=>{
       console.log(data)
+      this.responseMsg=data.message;
+      this.rsponseStatusOk=true
+      console.log(this.responseMsg)
+
       this.ngOnInit()
+    },error=>{
+      this.rsponseStatusNot=true
+      this.responseMsg=error.message
+      console.log(this.responseMsg)
     })
   }
 

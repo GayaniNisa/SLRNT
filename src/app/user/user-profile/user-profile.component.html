@@ -25,7 +25,7 @@
 
                 <mat-form-field class="example-full-width">
                   <mat-label>Mobile No</mat-label>
-                  <input formControlName="mobileNo" matInput placeholder="Enter full name" [value]="mobileNo">
+                  <input formControlName="mobileNo" maxlength="10" matInput placeholder="Enter full name" [value]="mobileNo">
                   <mat-error *ngIf="form.get('mobileNo').invalid && form.controls['mobileNo'].touched">Enter valid email</mat-error>
                 </mat-form-field>
 
@@ -42,6 +42,15 @@
                 </mat-form-field> -->
 
                 <button class="btn btn-primary" type="submit">Submit</button>
+
+                <div>
+                  <div class="alert alert-success mt-2" *ngIf="updateOk">
+        {{instituteUpdateMsg}}
+                  </div>
+                  <div class="alert alert-warn mt-2" *ngIf="updateNotOk">
+        {{instituteUpdateMsg}}
+                  </div>
+                </div>
 
               </form>
             </div>

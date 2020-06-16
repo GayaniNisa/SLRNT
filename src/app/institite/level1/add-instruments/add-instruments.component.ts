@@ -52,13 +52,25 @@ export class AddInstrumentsComponent implements OnInit {
   success: boolean = false;
   Nsuccess: boolean = false;
 
-  check;
+
 
   minDate: Date;
   maxDate: Date;
 
 
+  imagePreview1:string;
+  isUploaded1:boolean=false;
+  imagePreview2:string;
+  isUploaded2:boolean=false;
+  imagePreview3:string;
+  isUploaded3:boolean=false
+  imagePreview4:string;
+  isUploaded4:boolean=false
+  imagePreview5:string;
+  isUploaded5:boolean=false
 
+  addOkMsg:string;
+  addNotOkMsg:string;
 
 //   x() {
 //     let start=new Date();
@@ -88,17 +100,28 @@ export class AddInstrumentsComponent implements OnInit {
     instrument.append("instrumentName",this.instrumentName)
     instrument.append("modal",this.model)
     instrument.append("brand",this.brand)
-    instrument.append("strengthsList",JSON.stringify(this.strengths))
-    instrument.append("limitationsList",JSON.stringify(this.limitations))
-    instrument.append("applicationList",JSON.stringify(this.applications))
-    instrument.append("technicalSpecificationList",JSON.stringify(this.specificationTechs))
+    this.strengths.forEach(element => {
+      instrument.append("strengthsList",element)
+    });
+
+    this.limitations.forEach(element => {
+      instrument.append("limitationsList",element)
+    });
+
+    this.applications.forEach(element => {
+      instrument.append("applicationList",element)
+    });
+
+    this.specificationTechs.forEach(element => {
+      instrument.append("technicalSpecificationList",element)
+    });
+
+
     instrument.append("categoriesSet",JSON.stringify(null))
     instrument.append("manufacturedDate",this.manufacturedDate)
     instrument.append("depricatedDate",this.depriciatedDate)
-    instrument.append("state",null)
     instrument.append("price",this.price)
     instrument.append("description",this.description)
-    instrument.append("rating",null)
     instrument.append("custodianEmail",this.custodianEmail)
     instrument.append("imageArr",this.selectedFile1)
     instrument.append("imageArr",this.selectedFile2)
@@ -107,16 +130,19 @@ export class AddInstrumentsComponent implements OnInit {
     instrument.append("imageArr",this.selectedFile5)
 
 
-
+console.log(instrument)
+this.success=false
+this.Nsuccess=false
     this.instrumentControll.addInstrument(instrument).subscribe(
       data => {
         this.success = true;
         console.log(data);
-        this.check = data.description;
+        this.addOkMsg=data.message
       },
       error => {
-        this.Nsuccess = false;
+        this.Nsuccess = true;
         console.log(error);
+        this.addNotOkMsg=error.message
       }
     );
 
@@ -168,36 +194,107 @@ export class AddInstrumentsComponent implements OnInit {
   }
 
 
-  onFileChanged(event) {
-    const file = event.target.files[0];
-    console.log(file);
-    // console.log(file);
-  }
 
   onFileSelected1(event) {
     // console.log(event);
     this.selectedFile1 = <File>event.target.files[0];
     console.log(this.selectedFile1);
+
+    const file = (event.target as HTMLInputElement).files[0];
+    console.log(file)
+    // this.form.patchValue({image:file})
+    // this.form.get('image').updateValueAndValidity();
+    // console.log(this.form)
+    const reader = new FileReader()
+    reader.onload= ()=>{
+      this.imagePreview1=<string>(reader.result);
+      let x= <string>(reader.result)
+      console.log(this.imagePreview1)
+    };
+    reader.readAsDataURL(file)
+    console.log(this.imagePreview1)
+    this.isUploaded1=true;
   }
   onFileSelected2(event) {
     // console.log(event);
     this.selectedFile2 = <File>event.target.files[0];
     console.log(this.selectedFile2);
+
+    const file = (event.target as HTMLInputElement).files[0];
+    console.log(file)
+    // this.form.patchValue({image:file})
+    // this.form.get('image').updateValueAndValidity();
+    // console.log(this.form)
+    const reader = new FileReader()
+    reader.onload= ()=>{
+      this.imagePreview2=<string>(reader.result);
+      let x= <string>(reader.result)
+      console.log(this.imagePreview2)
+    };
+    reader.readAsDataURL(file)
+    console.log(this.imagePreview2)
+    this.isUploaded2=true;
+
   }
   onFileSelected3(event) {
     // console.log(event);
     this.selectedFile3 = <File>event.target.files[0];
     console.log(this.selectedFile2);
+
+    const file = (event.target as HTMLInputElement).files[0];
+    console.log(file)
+    // this.form.patchValue({image:file})
+    // this.form.get('image').updateValueAndValidity();
+    // console.log(this.form)
+    const reader = new FileReader()
+    reader.onload= ()=>{
+      this.imagePreview3=<string>(reader.result);
+      let x= <string>(reader.result)
+      console.log(this.imagePreview3)
+    };
+    reader.readAsDataURL(file)
+    console.log(this.imagePreview3)
+    this.isUploaded3=true;
   }
   onFileSelected4(event) {
     // console.log(event);
     this.selectedFile4 = <File>event.target.files[0];
     console.log(this.selectedFile4);
+
+    const file = (event.target as HTMLInputElement).files[0];
+    console.log(file)
+    // this.form.patchValue({image:file})
+    // this.form.get('image').updateValueAndValidity();
+    // console.log(this.form)
+    const reader = new FileReader()
+    reader.onload= ()=>{
+      this.imagePreview4=<string>(reader.result);
+      let x= <string>(reader.result)
+      console.log(this.imagePreview4)
+    };
+    reader.readAsDataURL(file)
+    console.log(this.imagePreview4)
+    this.isUploaded4=true;
   }
   onFileSelected5(event) {
     // console.log(event);
     this.selectedFile5 = <File>event.target.files[0];
     console.log(this.selectedFile5);
+
+    const file = (event.target as HTMLInputElement).files[0];
+    console.log(file)
+    // this.form.patchValue({image:file})
+    // this.form.get('image').updateValueAndValidity();
+    // console.log(this.form)
+    const reader = new FileReader()
+    reader.onload= ()=>{
+      this.imagePreview5=<string>(reader.result);
+      let x= <string>(reader.result)
+      console.log(this.imagePreview5)
+    };
+    reader.readAsDataURL(file)
+    console.log(this.imagePreview5)
+    this.isUploaded5=true;
   }
 
 }

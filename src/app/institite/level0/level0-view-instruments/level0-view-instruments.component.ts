@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InstrumentControlService } from 'src/app/services/instrument-control.service';
+import { Instrument } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-level0-view-instruments',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Level0ViewInstrumentsComponent implements OnInit {
 
-  constructor() { }
+  instrumentList:Instrument[];
+
+  constructor(public instrumentControl:InstrumentControlService) { }
 
   ngOnInit(): void {
+    this.instrumentControl.getAllInstrumentsWithinInstititue()
+    .subscribe(data=>{
+      this.instrumentList=data.instrumentList
+      console.log(this.instrumentList)
+    })
   }
 
 }

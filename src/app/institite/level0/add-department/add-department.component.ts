@@ -11,6 +11,10 @@ export class AddDepartmentComponent implements OnInit {
 
   form:FormGroup;
 
+  responseOk:boolean=false;
+  responseNot:boolean=false;
+  responseMsg:string;
+
 
   constructor(public departmentControl:DeparmentControlService) {
 
@@ -26,7 +30,12 @@ export class AddDepartmentComponent implements OnInit {
   onAddDepartment(){
     this.departmentControl.addDepartment(this.form.value.departmentName,this.form.value.departmentHeadEmail)
     .subscribe(data=>{
+      this.responseOk=true;
+      this.responseMsg=data.message
       console.log(data)
+    },error=>{
+      this.responseNot=true
+      this.responseMsg=error.message
     })
   }
 

@@ -1,0 +1,409 @@
+<div>
+  <div class="row image-container">
+      <div class="col-md-6" style="padding: 0px;">
+          <div class="img-hover-zoom1">
+              <!-- <img src="assets/Images/micro4.jpg" style="width:100%;height:400px;"> -->
+
+              <img [src]="'http://localhost:8080/'+instrument?.images[0]" style="width:100%;height:400px;background-size: cover;">
+              <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[0]" style="width:100%;height:400px;"> -->
+
+              <!-- <img src="https://firebasestorage.googleapis.com/v0/b/slrnt-v2x.appspot.com/o/Instruments%2F1.jpg?alt=media&token=80874dce-88df-491b-8c7e-86d129ef4a0e" style="width:100%;height:400px;"
+                  alt="This zooms-in really well and smooth"> -->
+          </div>
+      </div>
+      <div class="col-md-6">
+          <!-- <div class="row">
+          <div class="img-hover-zoom2">
+              <img src="assets/Images/micro5.jpg" style="width:200%;height:200px;" alt="This zooms-in really well and smooth">
+          </div>
+      </div> -->
+          <div class="row">
+              <div class="col-md-6 right_img">
+                  <div class="img-hover-zoom2">
+                      <!-- <img src="assets/Images/micro6.jpg" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                          <img [src]="'http://localhost:8080/'+instrument?.images[1]" style="width:100%;height:200px;background-size: cover;"
+                          alt="This zooms-in really well and smooth">
+
+                          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[1]" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/slrnt-v2x.appspot.com/o/Instruments%2F2.jpg?alt=media&token=6f349191-e873-4f8d-b70e-c98dfe3ab531" style="width:100%;height:200px;"> -->
+
+
+                  </div>
+              </div>
+              <div class="col-md-6 right_img">
+                  <div class="img-hover-zoom2">
+                      <!-- <img src="assets/Images/micro2.jpg" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                          <img [src]="'http://localhost:8080/'+instrument?.images[2]" style="width:100%;height:200px;background-size: cover;"
+                          alt="This zooms-in really well and smooth">
+
+                          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[2]" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/slrnt-v2x.appspot.com/o/Instruments%2F3.png?alt=media&token=adb96126-536b-464f-8b29-d4cd4779aef7" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+                  </div>
+              </div>
+
+          </div>
+          <div class="row">
+              <div class="col-md-6 right_img">
+                  <div class="img-hover-zoom3">
+                      <!-- <img src="assets/Images/micro3.jpg" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                          <img [src]="'http://localhost:8080/'+instrument?.images[3]" style="width:100%;height:200px;background-size: cover;"
+                          alt="This zooms-in really well and smooth">
+
+                          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[3]" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/slrnt-v2x.appspot.com/o/Instruments%2F4.jpg?alt=media&token=9d5735c8-76b8-4ada-9492-f7a356340f87" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+                  </div>
+              </div>
+              <div class="col-md-6 right_img">
+                  <div class="img-hover-zoom3">
+                      <!-- <img src="assets/Images/micro1.jpg" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                          <img [src]="'http://localhost:8080/'+instrument?.images[4]" style="width:100%;height:200px;background-size: cover;"
+                          alt="This zooms-in really well and smooth">
+
+                          <!-- <img [src]="'http://labnet.lk:8080/'+instrument?.images[4]" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+
+                      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/slrnt-v2x.appspot.com/o/Instruments%2F5.jpg?alt=media&token=a87eb523-5908-4687-82c5-9f036819c243" style="width:100%;height:200px;"
+                          alt="This zooms-in really well and smooth"> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container mt-4">
+
+
+      <div class="row">
+
+          <div class="col-md-7">
+
+              <div style="margin-left: 6px;">
+
+                  <div>
+                      <h1 class="mt-2" style="text-align: left;font-weight: bolder;">{{instrumentName}}</h1>
+                      <!-- <h3 class="mb-8" style="text-align: left;font-weight: bolder;">Category</h3> -->
+                  </div>
+                  <ul>
+                      <strong>BRAND</strong>
+                      <li>{{brand}}</li>
+                  </ul>
+                  <hr>
+                  <ul>
+                      <strong>MODEL</strong>
+                      <li>{{model}}</li>
+                  </ul>
+                  <hr>
+                  <ul>
+                      <strong>PRODUCT DESCRIPTION</strong>
+                      <li class="product_description">{{description}}</li>
+                  </ul>
+
+                  <ul>
+                      <strong>PRICE</strong>
+                      <li>{{price}}</li>
+                  </ul>
+                  <hr>
+                  <ul>
+                      <strong>MANUFACTURED DATE</strong>
+                      <li>{{manufacturedDate | date: 'yyyy-MM-dd'}}</li>
+                  </ul>
+                  <hr>
+                  <ul>
+                      <strong>DEPRECIATED DATE</strong>
+                      <li>{{depriciatedDate | date: 'yyyy-MM-dd'}}</li>
+                  </ul>
+                  <hr>
+                  <ul class="ulApplications">
+                      <strong>TECHNICAL SPECIFICATIONS</strong>
+                      <li *ngFor="let specification of specifications">{{specification}}</li>
+                  </ul>
+                  <hr>
+                  <ul class="ulApplications">
+                      <strong>STRENGTHS</strong>
+                      <li *ngFor="let strength of strengths">{{strength}}</li>
+                  </ul>
+                  <hr>
+                  <ul class="ulApplications">
+                      <strong>LIMITATIONS</strong>
+                      <li *ngFor="let limitation of limitations">{{limitation}}</li>
+                  </ul>
+                  <hr>
+                  <ul class="ulApplications">
+                      <strong>APPLICATIONS</strong>
+                      <li *ngFor="let application of applications">{{application}}</li>
+                  </ul>
+                  <hr>
+
+
+
+                  <ul>
+                      <strong>RATINGS</strong>
+                      <li>
+                          <table>
+                              <tbody>
+                                  <tr>
+                                      <td><i class="fa fa-star rate" [ngClass]="(rating>0)?'first':'second'"
+                                              aria-hidden="true"></i></td>
+                                      <td><i class="fa fa-star rate" [ngClass]="(rating>=2)?'first':'second'"
+                                              aria-hidden="true"></i></td>
+                                      <td><i class="fa fa-star rate" [ngClass]="(rating>=3)?'first':'second'"
+                                              aria-hidden="true"></i></td>
+                                      <td><i class="fa fa-star rate" [ngClass]="(rating>=4)?'first':'second'"
+                                              aria-hidden="true"></i></td>
+                                      <td><i class="fa fa-star rate" [ngClass]="(rating==5)?'first':'second'"
+                                              aria-hidden="true"></i></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </li>
+                  </ul>
+                  <hr>
+
+                  <!-- <div class="form-group">
+  <label for="checkDate">Date Of Birth</label>
+  <input type="text" id="checkDate" name="checkDate" bsDatePicker [(ngModel)]="checkDate" class="form-control" placeholder="Select your date">
+
+</div> -->
+
+              </div>
+
+              <!-- <ul>
+                <strong>RATINGS</strong>
+                <li>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><i (click)="onStar1()" [ngClass]="(rating1>0)?'first':'second'" class="fa fa-star str1 rate star1 star2 star3 star4 star5" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-star ex1 str2 rate star2 star3 star4 star5" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-star ex1 ex2 str3 rate star3 star4 star5" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-star ex1 ex2 ex3 str4 rate star4 star5" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-star ex1 ex2 ex3 ex4 str5 rate star5" aria-hidden="true"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul> -->
+
+
+          </div>
+          <div class="col-md-5 fixed_payment">
+              <div class="row py-2" style="background-color: darkslategrey;width: 100%;">
+                  <div class="col-md-12 mt-3">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h5 style="color: white;text-align: center;">Check
+                                  availability</h5>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <!-- <div class="col-md-12">
+                                      <div class="form-group">
+                                              <input placeholder="Start Date" id="startDate" name="startDate" [(ngModel)]="startDate" type="text" bsDatepicker class="form-control">
+                                            </div>
+                                            <button class="btn btn-light mb-2" style="width: 100%;">Check availability</button>
+                              </div> -->
+
+                          <div class="col-md-12">
+                              <input [minDate]="maxDate" type="text" placeholder="Select reservation time period" class="form-control datePickerSelector my-2 dateRangeInput"
+                                  bsDaterangepicker [bsConfig]="{ isAnimated: true }" id="bookedRange"
+                                  name="bookedRange" [(ngModel)]="bookedRange">
+                              <button class="btn btn-light mb-2 availabilityBtn" style="width: 100%;"
+                                  (click)="checkAvailability()">Check
+                                  availability</button>
+
+                                  <!-- <div class="row" *ngIf="availabilityBooked"> -->
+                                    <div class="alert alert-danger a1" role="alert" *ngIf="availabilityBooked"
+                                        style="text-align: center;width: 100%;margin: auto;">
+                                        {{notMsg}}
+                                    </div>
+                                <!-- </div> -->
+
+                                <!-- <div class="row" *ngIf="availabilityNotBooked"> -->
+                                    <div class="alert alert-success a1" *ngIf="availabilityNotBooked" role="alert">
+                                        {{okMsg}}
+                                    </div>
+                                <!-- </div> -->
+
+                                <!-- <div class="row" *ngIf="availabilityDisabled"> -->
+                                    <div class="alert alert-success a1 " *ngIf="availabilityDisabled" role="alert">
+                                        Instrument disabled.
+                                    </div>
+                                <!-- </div> -->
+
+                          </div>
+                      </div>
+                      <!-- <div class="row">
+                          <div class="col-md-12">
+                              <div class="row" *ngIf="availabilityBooked">
+                                  <div class="alert alert-success a1" role="alert"
+                                      style="text-align: center;width: 100%;margin: auto;">
+                                      {{okMsg}}
+                                  </div>
+                              </div>
+
+                              <div class="row" *ngIf="availabilityNotBooked">
+                                  <div class="alert alert-success a1" role="alert">
+                                      Available
+                                  </div>
+                              </div>
+
+                              <div class="row" *ngIf="availabilityDisabled">
+                                  <div class="alert alert-success a1 " role="alert">
+                                      Instrument disabled.
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+
+                      <div class="row" *ngIf="availabilityNotBooked" >
+                          <div class="col-md-12">
+                              <div class="card card_reservation my-2">
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item" style="margin-left: 0px;width: 100%;">
+                                        <div style="width: 100%;display: flex;">
+                                          <div style="float: left;width:30%;text-align: left;"><strong>Start Date  </strong></div>
+                                          <div style="float: right;width: 70%;text-align: right;">{{start | date}}</div>
+                                        </div>
+                                      </li>
+                                      <li class="list-group-item" style="margin-left: 0px;width: 100%;">
+                                        <div style="width: 100%;display: flex;">
+                                          <div style="float: left;width:30%;text-align: left;"><strong>End Date  </strong></div>
+                                          <div style="float: right;width: 70%;text-align: right;">{{end | date}}</div>
+                                            </div>
+                                      </li>
+                                      <li class="list-group-item" style="margin-left: 0px;width: 100%;">
+                                        <div style="width: 100%;display: flex;">
+                                          <div style="float: left;width:30%;text-align: left;"><strong>Total price </strong></div>
+                                          <div style="float: right;width: 70%;text-align: right;">{{price}}</div>
+                                        </div>
+                                      </li>
+                                      <li class="list-group-item" style="margin-left: 0px;">
+                                          <button class="btn btn-danger btn_reserve" data-toggle="modal"
+                                              data-target="#exampleModalLongReserve">Reserve</button>
+                                      </li>
+                                  </ul>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--
+                  <div class="row" style="background-color: darkslategrey">
+
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <input placeholder="End Date" id="endDate" name="dateOfBirth" [(ngModel)]="endDate" type="text" bsDatepicker class="form-control">
+                            </div>
+                      </div>
+                      <p>payment integraton</p>
+
+                  </div> -->
+              <!-- <div class="row">
+                      <div class="col-xs-12 col-12 col-md-4 form-group">
+                        <input type="text"
+                               class="form-control"
+                               #dp="bsDatepicker"
+                               bsDatepicker
+                               [bsValue]="bsValue">
+                      </div>
+                           <div class="col-xs-12 col-12 col-md-3 form-group">
+                        <button class="btn btn-success" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen" type="button">Date Picker</button>
+                      </div>
+                    </div> -->
+              <!--
+                  <div class="row">
+                      <div class="row">
+                          <div class="col-xs-12 col-12 col-md-4 form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   #dp="bsDatepicker"
+                                   bsDatepicker
+                                   [bsValue]="bsValue">
+                          </div>
+                          <div class="col-xs-12 col-12 col-md-3 form-group">
+                            <button class="btn btn-success" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen" type="button">Date Picker</button>
+                          </div>
+                        </div>
+                  </div> -->
+          </div>
+
+
+      </div>
+  </div>
+
+
+
+  <div class="modal fade" id="exampleModalLongReserve" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>After reserving the instrument the order will be requested..</p>
+                  <p>You will get an email after accepting the order by the institute</p>
+                  <div class="alert alert-danger" id="msgWarn" *ngIf="signUpWarningMsgStatus">
+                    <p>{{signUpWarningMsg}}</p>
+                  </div>
+
+                  <div class="alert alert-success" role="alert" *ngIf="orderOk">
+                    Order request is being sent to custodian
+                    <p>{{orderOkMsg}}</p>
+                  </div>
+
+
+
+                  <div class="alert alert-danger" role="alert" *ngIf="orderNotOk">
+                    Order request is not being sent to custodian
+                    <p>{{orderNotOkMsg}}</p>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="orderConfirm()">Add order</button>
+
+
+
+                </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="col-md-7">
+      <h1>Reviews</h1>
+      <ul *ngFor="let review of instrument?.reviews">
+        <li>
+          <!-- <div class="form-group"> -->
+          <img src="assets/Images/user-defualt.png" class="rounded-circle" alt="default" style="width: 50px;height: 50px;">
+          <p class="ml-3" style="display: inline;"><span class="mat-h3">{{review.userName}}</span><span class="mat-h3" style="float: right;"> {{review.createdAt|date}} </span></p>
+          <!-- {{review.review}} -->
+        <!-- </div> -->
+          <p>{{review.review}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-5"></div>
+    </div>
+  </div>

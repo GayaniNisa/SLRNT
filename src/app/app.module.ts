@@ -17,6 +17,11 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatTreeModule} from '@angular/material/tree';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -47,6 +52,19 @@ import { UserInstituteAddComponent } from './user/user-institute-add/user-instit
 import { Level0ViewInstrumentsComponent } from './institite/level0/level0-view-instruments/level0-view-instruments.component';
 import { Level1ViewInstrumentsComponent } from './institite/level1/level1-view-instruments/level1-view-instruments.component';
 import { Level2ViewInstrumentsComponent } from './institite/level2/level2-view-instruments/level2-view-instruments.component';
+import { InstrumentEditComponent } from './institite/level1/instrument-edit/instrument-edit.component';
+import { InstrumentDeleteComponent } from './institite/level1/instrument-delete/instrument-delete.component';
+import { InstrumentViewComponent } from './instrument/instrument-view/instrument-view.component';
+import { OrderInstrumentComponent } from './orders/order-instrument/order-instrument.component';
+import { Level2ManageInstrumentsComponent } from './institite/level2/level2-manage-instruments/level2-manage-instruments.component';
+import { InstrumentStateChangeComponent } from './institite/level2/instrument-state-change/instrument-state-change.component';
+import { OrderPayhereComponent } from './order-payhere/order-payhere.component';
+import { ViewAllOrdersComponent } from './institite/level2/view-all-orders/view-all-orders.component';
+import { ViewAcceptedOrdersComponent } from './institite/level2/view-accepted-orders/view-accepted-orders.component';
+import { OrderAcceptedComponent } from './public/order-accepted/order-accepted.component';
+import { PublicUserProfileComponent } from './public/public-user-profile/public-user-profile.component';
+import { PublicInstituteProfileComponent } from './public/public-institute-profile/public-institute-profile.component';
+import { ViewPaidOrdersComponent } from './institite/level2/view-paid-orders/view-paid-orders.component';
 
 
 @NgModule({
@@ -74,7 +92,20 @@ import { Level2ViewInstrumentsComponent } from './institite/level2/level2-view-i
     UserInstituteAddComponent,
     Level0ViewInstrumentsComponent,
     Level1ViewInstrumentsComponent,
-    Level2ViewInstrumentsComponent
+    Level2ViewInstrumentsComponent,
+    InstrumentEditComponent,
+    InstrumentDeleteComponent,
+    InstrumentViewComponent,
+    OrderInstrumentComponent,
+    Level2ManageInstrumentsComponent,
+    InstrumentStateChangeComponent,
+    OrderPayhereComponent,
+    ViewAllOrdersComponent,
+    ViewAcceptedOrdersComponent,
+    OrderAcceptedComponent,
+    PublicUserProfileComponent,
+    PublicInstituteProfileComponent,
+    ViewPaidOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +125,11 @@ import { Level2ViewInstrumentsComponent } from './institite/level2/level2-view-i
     MatDatepickerModule,
     HttpClientModule,
     MatNativeDateModule,
+    MatListModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTreeModule,
+    MatMenuModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [

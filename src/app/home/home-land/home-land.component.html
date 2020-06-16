@@ -1,4 +1,4 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -36,4 +36,145 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+ -->
 
+<div class="header-home">
+  <form [formGroup]="form" (submit)="onSearchName()">
+    <h1 class="header_text">Find Scientific Instruments Near You</h1>
+
+    <div class="form-box">
+      <input type="text" formControlName="instrumentName" class="search-field-input business" placeholder="Search instrument name">
+
+      <!-- <input type="text" class="search-field location" placeholder="Location"> -->
+
+      <button class="search-btn" type="submit">
+        <span style="font-weight: bold;">Search</span>
+      </button>
+    </div>
+  </form>
+</div>
+<!--
+<div>
+  <div class="row" style="padding-top: 40px;padding-bottom: 40px;background-color: black;">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <mat-card (click)="navigateInstrument(instrumentTop[0]._id)" class="example-card" style="height: 100%;margin-block: 5px;border: 2px solid white;">
+        <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[0]?.images[0]" alt="Photo of a Shiba Inu">
+
+        <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[0]?.images[0]" alt="Photo of a Shiba Inu">
+        <mat-card-footer>
+          <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+            {{instrumentTop[0]?.instrumentName}}
+          </p>
+        </mat-card-footer>
+      </mat-card>
+
+    </div>
+    <div class="col-md-5">
+      <div class="row" style="margin-bottom: 10px;">
+        <div class="col-md-6">
+          <mat-card (click)="navigateInstrument(instrumentTop[1]._id)" class="example-card" style="height: 100%;border: 2px solid white;">
+            <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[1]?.images[0]" alt="Photo of a Shiba Inu">
+
+            <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[1]?.images[0]" alt="Photo of a Shiba Inu">
+            <mat-card-footer>
+              <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+                {{instrumentTop[1]?.instrumentName}}
+              </p>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+        <div class="col-md-6">
+          <mat-card (click)="navigateInstrument(instrumentTop[2]._id)" class="example-card" style="height: 100%;border: 2px solid white;">
+            <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[2]?.images[0]" alt="Photo of a Shiba Inu">
+
+            <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[2]?.images[0]" alt="Photo of a Shiba Inu">
+            <mat-card-footer>
+              <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+                {{instrumentTop[2]?.instrumentName}}
+              </p>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-card (click)="navigateInstrument(instrumentTop[3]._id)" class="example-card" style="height: 100%;border: 2px solid white;">
+            <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[3]?.images[0]" alt="Photo of a Shiba Inu">
+
+            <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[3]?.images[0]" alt="Photo of a Shiba Inu">
+            <mat-card-footer>
+              <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+                {{instrumentTop[3]?.instrumentName}}
+              </p>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+        <div class="col-md-6">
+          <mat-card (click)="navigateInstrument(instrumentTop[4]._id)" class="example-card" style="height: 100%;border: 2px solid white;">
+            <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[4]?.images[0]" alt="Photo of a Shiba Inu">
+
+        <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[4]?.images[0]" alt="Photo of a Shiba Inu">
+        <mat-card-footer>
+          <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+            {{instrumentTop[4]?.instrumentName}}
+          </p>
+        </mat-card-footer>
+      </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div> -->
+
+
+<div class="container" style="padding-top: 40px;padding-bottom: 40px;">
+  <div class="row" style="height: auto;">
+  <div class="col-md-3">
+    <mat-card (click)="navigateInstrument(instrumentTop[0]._id)" class="example-card mx-1" style="height: 100%;margin-block: 5px;border: 2px solid white;">
+      <!-- <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[0]?.images[0]" alt="Photo of a Shiba Inu"> -->
+      <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[0]?.images[0]" style="height: auto;" alt="Photo of a Shiba Inu">
+      <mat-card-footer>
+        <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+          {{instrumentTop[0]?.instrumentName}}
+        </p>
+      </mat-card-footer>
+    </mat-card>
+
+  </div>
+  <div class="col-md-3">
+    <mat-card (click)="navigateInstrument(instrumentTop[1]._id)" class="example-card mx-1" style="height: 100%;margin-block: 5px;border: 2px solid white;">
+      <!-- <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[1]?.images[0]" alt="Photo of a Shiba Inu"> -->
+      <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[1]?.images[0]" style="height: auto;" alt="Photo of a Shiba Inu">
+      <mat-card-footer>
+        <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+          {{instrumentTop[1]?.instrumentName}}
+        </p>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="col-md-3">
+    <mat-card (click)="navigateInstrument(instrumentTop[2]._id)" class="example-card mx-1" style="height: 100%;margin-block: 5px;">
+      <!-- <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[2]?.images[0]" alt="Photo of a Shiba Inu"> -->
+      <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[2]?.images[0]" style="height: auto;" alt="Photo of a Shiba Inu">
+      <mat-card-footer>
+        <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+          {{instrumentTop[2]?.instrumentName}}
+        </p>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="col-md-3">
+    <mat-card (click)="navigateInstrument(instrumentTop[3]._id)" class="example-card mx-1" style="height: 100%;margin-block: 5px;border: 2px solid white;">
+      <!-- <img mat-card-image [src]="'http://labnet.lk:8080/'+instrumentTop[3]?.images[0]" alt="Photo of a Shiba Inu"> -->
+      <img mat-card-image [src]="'http://localhost:8080/'+instrumentTop[3]?.images[0]" style="height: auto;" alt="Photo of a Shiba Inu">
+      <mat-card-footer>
+        <p style="text-align: center;font-weight: bold;letter-spacing: 2px;">
+          {{instrumentTop[3]?.instrumentName}}
+        </p>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
+</div>

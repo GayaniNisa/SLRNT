@@ -9,7 +9,10 @@
             <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Researcher'" class="mat-body-2 profile-nav" (click)="onResearcherPurchase()">PURCHASE AN INSTRUMENT</button>
             <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onInstituteProfile()">INSTITUTE PROFILE</button>
             <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onLevel2InstrumentManagement()">MANAGE INSTRUMENTS</button>
-            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onAllInstruemts()">VIEW ALL INSTRUMENTS RESPONSIBLE</button>
+            <!-- <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onAllInstruemts()">RESPONSIBLE INSTRUMENTS</button> -->
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onViewOrders()">MANAGE ORDERS</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onViewAccepted()">ACCEPTED ORDERS</button>
+            <button mat-button routerLink="/level2" *ngIf="selectedOption=='Role : Level2'" class="mat-body-2 profile-nav" (click)="onPaidOrders()">PAID ORDERS</button>
             <div class="spacer"></div>
             <div>
               <mat-form-field>
@@ -34,6 +37,9 @@
   <app-user-display *ngIf="ResearcherProfile && selectedOption=='Role : Researcher'"></app-user-display>
 
   <app-institute-details *ngIf="InstituteProfile && selectedOption=='Role : Level2'"></app-institute-details>
+  <app-level2-manage-instruments *ngIf="Level2InstrumentManagement && selectedOption=='Role : Level2'"></app-level2-manage-instruments>
   <app-level2-view-instruments *ngIf="AllInstruments && selectedOption=='Role : Level2'"></app-level2-view-instruments>
-
+  <app-view-all-orders *ngIf="ViewOrders && selectedOption=='Role : Level2'"></app-view-all-orders>
+  <app-view-accepted-orders *ngIf="ViewAccepted && selectedOption=='Role : Level2'"></app-view-accepted-orders>
+  <app-view-paid-orders *ngIf="PaidOrders && selectedOption=='Role : Level2'"></app-view-paid-orders>
 </div>

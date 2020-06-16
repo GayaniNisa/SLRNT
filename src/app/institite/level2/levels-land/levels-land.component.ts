@@ -14,6 +14,9 @@ export class LevelsLandComponent implements OnInit {
   InstituteProfile:boolean=true;
   Level2InstrumentManagement:boolean=false;
   AllInstruments:boolean=false
+  ViewOrders:boolean=false
+  ViewAccepted:boolean=false
+  PaidOrders:boolean=false
 
 
   options= [
@@ -28,7 +31,11 @@ export class LevelsLandComponent implements OnInit {
 
   onChangeSelect(value){
     this.selectedOption=value;
-
+    if(value==='Role : Researcher'){
+      this.ResearcherProfile=true
+    }else if(value==='Role : Level2'){
+      this.InstituteProfile=true
+    }
   }
 
   initial(){
@@ -37,6 +44,9 @@ export class LevelsLandComponent implements OnInit {
     this.ResearcherProfile=false
     this.ResearcherPurchase=false
     this.AllInstruments=false
+    this.ViewOrders=false
+    this.ViewAccepted=false
+    this.PaidOrders=false
   }
 
 
@@ -69,4 +79,19 @@ export class LevelsLandComponent implements OnInit {
     this.AllInstruments=true
   }
 
+  onViewOrders(){
+    this.initial()
+    this.ViewOrders=true
+  }
+
+  onViewAccepted(){
+    this.initial()
+    this.ViewAccepted=true
+  }
+
+  onPaidOrders(){
+    this.initial()
+    this.PaidOrders=true
+  }
 }
+

@@ -28,6 +28,10 @@ export class InstituteDetailsComponent implements OnInit {
   imageStatus:boolean=false;
   imageUrl:string;
 
+  responseOk:boolean=false;
+  responseNot:boolean=false;
+  responseMsg:string;
+
   constructor(public instituteControl:InstituteControlService) { }
 
   ngOnInit(): void {
@@ -48,6 +52,7 @@ export class InstituteDetailsComponent implements OnInit {
       this.telephoneNo=data.institute.instituteTelephone;
       this.instrumentCount=data.institute.instrumentCount;
       this.imageUrl="http://localhost:8080/"+data.institute.image;
+      // this.imageUrl="http://labnet.lk:8080/"+data.institute.image;
       let imageUrlOriginal=data.institute.image
 
       if(imageUrlOriginal==undefined){
@@ -86,8 +91,13 @@ export class InstituteDetailsComponent implements OnInit {
     console.log(this.form.value.image)
     this.instituteControl.addProfilePic(this.form.value.image)
     .subscribe(data=>{
+      this.responseOk=true
+      this.responseMsg=data.message
       console.log(data)
       this.ngOnInit()
+    },error=>{
+      this.responseNot=true
+      this.responseMsg=error.message
     })
   }
 }

@@ -21,7 +21,8 @@ export interface User{
   department:Department;
   instruments:Instrument;
   roles:Roles[],
-  createdAt:string
+  createdAt:string,
+  orders:[]
 }
 interface Roles{
     name:string,
@@ -42,6 +43,7 @@ export interface Institute{
   departments:Department[];
   instrumentCount:number;
   image:string;
+  review:[]
 }
 
 export interface Department{
@@ -68,7 +70,7 @@ export interface Instrument{
   categoriesSet:string,
   depricatedDate:string,
   description:string,
-  images:[],
+  images,
   instrumentName:string,
   limitationsList:[],
   manufacturedDate:string,
@@ -76,7 +78,11 @@ export interface Instrument{
   price:string,
   rating:string,
   state:string,
-  strengthsList:[]
+  strengthsList:[],
+  technicalSpecificationList:[],
+  reviews:[],
+  paymentState:number,
+  _id:string
 }
 
 interface Roles{}
@@ -129,6 +135,10 @@ export class AuthService {
 
   saveToken(token:string){
     localStorage.setItem('token',token)
+  }
+
+  saveRole(role:string){
+    localStorage.setItem('role',role)
   }
 
   logout(){

@@ -1,6 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+
+declare var $:any
 
 
 @Component({
@@ -17,7 +21,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   signUpStatus: boolean = false;
   signUpMsg: string;
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService,private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -36,9 +40,19 @@ export class SignupComponent implements OnInit, OnDestroy {
         this.signUpStatus = true
         this.signUpMsg = "signup successful"
 
+        $('.modal2').modal('toggle');
+
+        this._snackBar.open('SIGN UP SUCCESSFULL', '', {
+          duration: 1500,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass:['.classsnack']
+        });
+
         var dirtyFormID = 'formSignUp';
         var resetForm = <HTMLFormElement>document.getElementById(dirtyFormID);
         resetForm.reset();
+
 
 
       }, error => {
@@ -46,6 +60,15 @@ export class SignupComponent implements OnInit, OnDestroy {
         this.signUpStatus = false
         this.signUpMsg = "signup not successful"
         // this.form.reset()
+
+        $('.modal2').modal('toggle');
+
+        this._snackBar.open('SIGN UP NOT SUCCESSFULL', '', {
+          duration: 1500,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+
         var dirtyFormID = 'formSignUp';
         var resetForm = <HTMLFormElement>document.getElementById(dirtyFormID);
         resetForm.reset();

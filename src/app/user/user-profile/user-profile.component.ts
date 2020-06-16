@@ -20,6 +20,10 @@ export class UserProfileComponent implements OnInit {
 
   image;
 
+  instituteUpdateMsg:string;
+  updateOk:boolean=false
+  updateNotOk:boolean=false
+
   constructor(private authService:AuthService,private userControl:UserControlService) { }
 
   ngOnInit(): void {
@@ -50,6 +54,12 @@ export class UserProfileComponent implements OnInit {
     this.userControl.updateUser(this.form.value.fullName,this.form.value.userName,this.form.value.mobileNo,this.form.value.email)
     .subscribe(data=>{
       console.log(data)
+      this.instituteUpdateMsg=data.message
+      this.updateOk=true
+    },error=>{
+      console.log(error)
+      this.instituteUpdateMsg=error.message
+      this.updateNotOk=true
     })
   }
 }

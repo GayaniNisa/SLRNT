@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <p class="mt-5" style="text-align: center;" *ngIf="instrumentList?.length===0">No accepted orders are available</p>
+    <div class="row card card-description" *ngFor="let instrument of instrumentList">
+        <div class="row">
+            <div class="col-md-4 image_class" style="height: 200px;">
+                <img [src]="'http://localhost:8080/'+instrument.instrumentId.images[1]" style="height: 100%;width: 100%;">
+                <!-- <img [src]="'http://labnet.lk:8080/'+instrument.instrumentId.images[1]" style="height: 100%;width: 100%;"> -->
+            </div>
+            <div class="col-md-8 m-0">
+                <div class="card-body item-description">
+                    <h4 class="card-title">{{instrument.instrumentId.instrumentName}}</h4>
+                    <p class="card-text">{{instrument.instrumentId.description}}</p>
+                    <h4 class="card-title" style="text-decoration: underline;">Order details</h4>
+                    <p class="card-text"><strong>Start Date: </strong>{{instrument.startDate |date}}</p>
+                    <p class="card-text"><strong>End Date: </strong>{{instrument.endDate |date}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+<div class="col-md-1"></div>
+</div>
+

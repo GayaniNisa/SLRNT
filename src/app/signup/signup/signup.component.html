@@ -44,9 +44,12 @@
               <mat-chip [disabled]="form.invalid" type="submit" color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text">Sign up</span></mat-chip>
             </mat-chip-list>
           </div>
-          <div *ngIf="signUpStatus">
-            {{signUpMsg}}
+          <!-- <div *ngIf="signUpStatus">
+            {{signUpMsg}}ok
           </div>
+          <div *ngIf="!signUpStatus">
+            {{signUpMsg}}warn
+          </div> -->
         </form>
       <!-- </mat-card-content>
     </mat-card>

@@ -13,6 +13,6 @@ export class DeparmentControlService {
 
   addDepartment(departmentName:string,departmentHeadEmail:string){
     let departmentAddRequest={departmentName:departmentName,departmentHeadEmail:departmentHeadEmail}
-    return this.http.post(this.BASE_URL+'/add/department',departmentAddRequest);
+    return this.http.post<{message:string,success:boolean}>(this.BASE_URL+'/add/department',departmentAddRequest);
   }
 }

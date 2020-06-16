@@ -13,6 +13,11 @@ import { AddInstrumentsComponent } from './institite/level1/add-instruments/add-
 import { InstituteDetailsComponent } from './institite/institute-details/institute-details.component';
 import { UserDisplayComponent } from './user/user-display/user-display.component';
 import { UserInstituteAddComponent } from './user/user-institute-add/user-institute-add.component';
+import { OrderLandComponent } from './orders/order-land/order-land.component';
+import { OrderInstrumentComponent } from './orders/order-instrument/order-instrument.component';
+import { PublicUserProfileComponent } from './public/public-user-profile/public-user-profile.component';
+import { PublicInstituteProfileComponent } from './public/public-institute-profile/public-institute-profile.component';
+import { OrderAcceptedComponent } from './public/order-accepted/order-accepted.component';
 
 
 
@@ -27,7 +32,12 @@ const routes: Routes = [
   {path: 'researcher/view',component: UserDisplayComponent},
   {path: 'level1/institute',component: InstituteDetailsComponent},
   {path: 'instruments',component: AddInstrumentsComponent},
-  {path: 'user/add/institute',component: UserInstituteAddComponent}
+  {path: 'user/add/institute',component: UserInstituteAddComponent},
+  {path: 'order/all/:name',component: OrderLandComponent},
+  {path: 'instrument/:id',component: OrderInstrumentComponent},
+  {path: 'public/user/:userId',component: PublicUserProfileComponent},
+  {path: 'public/institute/:instituteId',component: PublicInstituteProfileComponent},
+  {path: 'order/accept/:orderId',component: OrderAcceptedComponent}
 ];
 
 @NgModule({

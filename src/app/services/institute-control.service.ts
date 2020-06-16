@@ -19,6 +19,6 @@ export class InstituteControlService {
   addProfilePic(file:File){
     let uploaded=new FormData();
     uploaded.append('image',file)
-    return this.http.post(this.BASE_URL+'/update/institute-image',uploaded)
+    return this.http.post<{message:string,imgUrl:string,success:boolean}>(this.BASE_URL+'/update/institute-image',uploaded)
   }
 }

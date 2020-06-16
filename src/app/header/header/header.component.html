@@ -45,7 +45,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">SLRNT</a>
+    <a class="navbar-brand" href="#">LABNET</a>
     <span class="spacer"></span>
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -65,16 +65,30 @@
         <a routerLink="/" class="mat-body-2" data-toggle="modal" data-target="#exampleModal">SIGN UP</a>
       </li>
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a routerLink="/" class="mat-body-2 signin-link" data-toggle="modal" data-target="#exampleModalLong">SIGN IN</a>
+        <a routerLink="/" class="mat-body-2 signin-link" data-toggle="modal" data-target="#exampleModalLong">LOG IN</a>
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <!-- <li class="nav-item" *ngIf="authService.isLoggedIn()">
         <a routerLink="/" class="mat-body-2" (click)="onLogout()" class="mat-body-2">LOG OUT</a>
-      </li>
-      <!-- <li class="nav-item"> -->
-        <!-- <a routerLink="/" class="mat-body-2" class="mat-body-2"> -->
-          <button (click)="navigateToProfile()" mat-mini-fab style="margin: auto;" color="primary" *ngIf="authService.isLoggedIn()">{{signInBtn}}</button>
-        <!-- </a> -->
-      <!-- </li> -->
+      </li> -->
+
+          <!-- <button (click)="navigateToProfile()" mat-mini-fab style="margin: auto;" color="primary" *ngIf="authService.isLoggedIn()">{{signInBtn}}</button> -->
+
+          <!-- <button (click)="navigateToProfile()" mat-mini-fab style="margin: auto;" color="primary" *ngIf="authService.isLoggedIn()">{{sign</button> -->
+
+            <button mat-mini-fab style="margin: auto;" color="primary" *ngIf="authService.isLoggedIn()" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              {{signInBtn}}
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="navigateToProfile()">
+                <mat-icon>arrow_forward_ios</mat-icon>
+                <span>VIEW PROFILE</span>
+              </button>
+              <button mat-menu-item (click)="onLogout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>LOG OUT</span>
+              </button>
+            </mat-menu>
+
     </ul>
   </div>
 </nav>
@@ -86,7 +100,7 @@
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal modal1 fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -105,7 +119,7 @@
               <div class="row">
               <form [formGroup]="form" (submit)="onLogin()">
                 <div class="row">
-                  <h1 style="width: 100%;text-align: center;">Signin</h1>
+                  <h1 style="width: 100%;text-align: center;">Log in</h1>
                 </div>
                 <mat-form-field class="example-full-width">
                   <mat-label>Email address</mat-label>
@@ -127,9 +141,7 @@
                     <mat-chip color="primary" style="margin: auto;width: 50%;padding: auto;" selected (click)="submitBtn.click()"><span class="login-text" style="text-align: center;">Login</span></mat-chip>
                   </mat-chip-list>
                 </div>
-                <div>
-                  {{signInStatusMsg}}
-                </div>
+
               </form>
             </div>
             <!-- </mat-card-content>
@@ -150,7 +162,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal modal2 fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -160,3 +172,5 @@
     </div>
   </div>
 </div>
+
+
